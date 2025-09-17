@@ -89,7 +89,7 @@ const Footer = () => {
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="/privacy-policy" className="hover:text-black">Privacy Policy</a>
             <a href="/terms-of-service" className="hover:text-black">Terms of Service</a>
-            <a href="#" className="hover:text-black">Cookies Settings</a>
+            <a href="/cookie-settings" className="hover:text-black">Cookies Settings</a>
           </div>
         </div>
       </div>

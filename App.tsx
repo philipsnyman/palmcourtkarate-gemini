@@ -20,6 +20,7 @@ import SchedulePage from './components/SchedulePage';
 import FitnessPage from './components/FitnessPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
+import CookieSettingsPage from './components/CookieSettingsPage';
 
 
 const App = () => {
@@ -90,6 +91,9 @@ const App = () => {
       break;
     case '/terms-of-service':
       page = <TermsOfServicePage />;
+      break;
+    case '/cookie-settings':
+      page = <CookieSettingsPage />;
       break;
     default:
       page = <HomePage />;
