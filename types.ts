@@ -35,6 +35,7 @@ export interface Affiliation {
     name: string;
     description: string;
     logoUrl: string;
+    learnMoreUrl: string;
 }
 
 export interface DanRankHolder {

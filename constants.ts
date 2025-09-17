@@ -86,14 +86,22 @@ export const infoCards: InfoCard[] = [
 
 export const affiliationsData: Affiliation[] = [
     {
-        name: 'Okinawa Goju-Ryu Karate-Do Kyokai (OGKK)',
-        description: 'The Okinawa Goju-Ryu Karate-Do Kyokai (OGKK) is the official governing body for Goju-Ryu karate in Okinawa, Japan. Our dojo is a proud member, ensuring our teachings are authentic and adhere to the highest standards of traditional Okinawan karate.',
-        logoUrl: '/images/ogkk-logo.png',
+        name: 'O.G.K.K Gauteng<br>South Africa',
+        description: 'At Palm Court Karate Centre, we are proud to be affiliated with O.G.K.K. Gauteng South Africa, a highly respected karate organization. This affiliation ensures that our instructors and students receive international recognition for their skills and achievements.',
+        logoUrl: '/images/OGKK-BADGE.jpg',
+        learnMoreUrl: 'https://gojukarate.co.za/',
     },
     {
-        name: 'South African Goju-Ryu Karate-Do Association (SAGKA)',
-        description: 'As a member of SAGKA, we are part of a national network of dojos dedicated to the practice and promotion of Goju-Ryu Karate in South Africa. This affiliation provides our students with opportunities for national-level competitions, seminars, and gradings.',
-        logoUrl: '/images/sagka-logo.png',
+        name: 'Karate South Africa (KSA)',
+        description: 'We are proud to be affiliated with Karate South Africa (KSA), a prestigious organization that promotes excellence in the martial arts. Our affiliation with KSA ensures that our instructors and students meet the highest standards of training and expertise.',
+        logoUrl: '/images/KSA-Logo.png',
+        learnMoreUrl: 'https://karate-sa.org/',
+    },
+    {
+        name: 'African Goju-Ryu Karate Federation',
+        description: 'At Palm Court Karate Centre, we are proud to be affiliated with the African Goju-Ryu Karate Federation. This affiliation allows us to provide our students with access to a wider network of karate practitioners and opportunities for growth.',
+        logoUrl: '/images/african-goju-ryu-karate-federation-logo.jpeg',
+        learnMoreUrl: 'https://agkf.co.za/',
     }
 ];
 
