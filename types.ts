@@ -69,3 +69,22 @@ export interface FaqItem {
     question: string;
     answer: ReactNode;
 }
+
+export interface GradingComponent {
+    japaneseName: string;
+    englishName: string;
+    description: string;
+}
+
+export interface BeltRankRequirement {
+    category: string;
+    description: string;
+}
+
+export interface BeltRank {
+    kyu: string;
+    beltName: string;
+    imageUrl: string;
+    description: string;
+    requirements: BeltRankRequirement[];
+}

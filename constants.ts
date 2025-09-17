@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -15,7 +15,7 @@ export const megaMenuColumns: MegaMenuColumn[] = [
     title: 'Karate',
     links: [
         { title: 'History', href: '#', description: 'The origins of Goju-Ryu' },
-        { title: 'Gradings', href: '#', description: 'The belt ranking system' },
+        { title: 'Gradings', href: '/gradings', description: 'The belt ranking system' },
         { title: 'Dojo Etiquette', href: '/dojo-etiquette', description: 'Begins and ends with respect' },
         { title: 'Terminology', href: '#', description: 'Learn the Japanese terms' },
     ]
@@ -352,7 +352,6 @@ const dojoEtiquetteRules = [
 export const dojoEtiquetteFaqs: FaqItem[] = [
     {
         question: 'What is dojo etiquette?',
-        // FIX: Replaced JSX with React.createElement to be compatible with a .ts file.
         answer: React.createElement(
             'ul',
             { className: "list-disc pl-5 space-y-2 text-gray-600" },
@@ -386,3 +385,148 @@ export const dojoKun = {
         imageUrl: '/images/Teruo-chinen.png'
     }
 };
+
+export const gradingComponentsData: GradingComponent[] = [
+    { japaneseName: '基本', englishName: 'Kihon', description: 'Kihon is a Japanese term meaning "basics" or "fundamentals." The term is used to refer to the basic techniques that are taught and practiced as the foundation of most Japanese martial arts.' },
+    { japaneseName: '型', englishName: 'Kata', description: 'Kata is a Japanese word meaning "form". It refers to a detailed choreographed pattern of martial arts movements. It is practiced in Japanese martial arts as a way to memorise and perfect the movements being executed.' },
+    { japaneseName: '組手', englishName: 'Kumite', description: 'Kumite literally translated means "grappling hands" or in another word it means "sparring" and is one of the three main sections of karate training, along with "Kata" and "Kihon". "Kumite" is the part of karate in which a person trains against one or more adversaries, using the techniques learned from the "Kihon" and "Kata".' },
+    { japaneseName: '補助運動', englishName: 'Fitness', description: 'Hojo undō is a Japanese language term, translated as "supplementary exercises", that refers to conditioning exercises used in martial arts, especially in karate. Hojo undō training was designed to develop ambidextrous physical strength, stamina, muscle coordination, speed, and posture.' },
+    { japaneseName: '掛け手', englishName: 'Kakie', description: 'Kakie is a traditional training method that focuses on developing close-range combat skills, sensitivity, and the ability to respond to an opponent\'s movements through tactile feedback. Kakie can be translated as "pushing hands" or "hooking hands," and it involves two practitioners maintaining continuous contact between their arms while performing various techniques.' },
+    { japaneseName: '分解', englishName: 'Bunkai', description: 'Bunkai, literally meaning "analysis"or "disassembly", is a term used in Japanese martial arts referring to process of analysing kata and extracting fighting techniques from the movements of a "form" (kata). The extracted fighting techniques are called Oyo.' },
+];
+
+export const beltRanksData: BeltRank[] = [
+    { kyu: '10th Kyu', beltName: 'White Belt ( Ungraded )', imageUrl: '/images/white-karate-belt.png', description: 'TBC Ungraded', requirements: [
+        { category: 'Kihon', description: 'Basic kihon (basic punch, block, and kick techniques and basic stances)' },
+        { category: 'Kata', description: 'Tachi kata (stance kata)' },
+        { category: 'Kumite', description: 'No contact to very light contact randori' },
+    ]},
+    { kyu: '9th Kyu', beltName: 'White Belt ( Graded )', imageUrl: '/images/white-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: '3 months or 25 sessions' },
+        { category: 'Terminology', description: 'Counting to 10 in Japanese and some basic terms like junbi undo, kihon training, kumite, directions and sides' },
+        { category: 'Kihon', description: 'Basic Kihon (basic punch, block, and kick techniques and basic stances)' },
+        { category: 'Kata', description: 'Gekisai Dai Ichi (basic sequence)' },
+        { category: 'Kumite', description: 'Sandan Gi number 1 and light contact randori' },
+        { category: 'Fitness', description: 'Push-ups, sit-ups, crunches, air squats, squat thrusts, star jumps, a mile run, etc.' },
+    ]},
+    { kyu: '8th Kyu', beltName: 'Junior Yellow Belt', imageUrl: '/images/yellow-karate-belt-j.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '8th Kyu', beltName: 'Yellow Belt', imageUrl: '/images/yellow-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '7th Kyu', beltName: 'Junior Orange Belt', imageUrl: '/images/orange-karate-belt-junior.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '7th Kyu', beltName: 'Orange Belt', imageUrl: '/images/orange-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '6th Kyu', beltName: 'Green Belt', imageUrl: '/images/green-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '5th Kyu', beltName: 'Blue Belt', imageUrl: '/images/blue-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '4th Kyu', beltName: 'Purple Belt', imageUrl: '/images/purple-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '3rd Kyu', beltName: 'Brown Belt (First)', imageUrl: '/images/brown-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+        { category: 'Other Requirements', description: 'TBC' },
+    ]},
+    { kyu: '2nd Kyu', beltName: 'Brown Belt (Second)', imageUrl: '/images/brown-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '1st Kyu', beltName: 'Brown Belt (Third)', imageUrl: '/images/brown-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '1st Dan', beltName: 'Junior Black', imageUrl: '/images/black-karate-belt-1.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+    ]},
+    { kyu: '1st Dan', beltName: 'Black Belt', imageUrl: '/images/black-karate-belt.png', description: 'TBC', requirements: [
+        { category: 'Minimum Training Time', description: 'TBC' },
+        { category: 'Terminology', description: 'TBC' },
+        { category: 'Kihon', description: 'TBC' },
+        { category: 'Kata', description: 'TBC' },
+        { category: 'Bunkai', description: 'TBC' },
+        { category: 'Kumite', description: 'TBC' },
+        { category: 'Kakie', description: 'TBC' },
+        { category: 'Fitness', description: 'TBC' },
+        { category: 'Other Requirements', description: 'TBC' },
+    ]},
+];

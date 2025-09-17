@@ -65,7 +65,7 @@ const Footer = () => {
               <FooterLink href="#">History</FooterLink>
               <FooterLink href="/dojo-etiquette">Dojo Etiquette</FooterLink>
               <FooterLink href="#">Terminology</FooterLink>
-              <FooterLink href="#">Gradings</FooterLink>
+              <FooterLink href="/gradings">Gradings</FooterLink>
             </ul>
           </div>
           

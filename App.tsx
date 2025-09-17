@@ -9,6 +9,7 @@ import FacilitiesPage from './components/FacilitiesPage';
 import MarioSequeiraPage from './components/MarioSequeiraPage';
 import OurDojoPage from './components/OurDojoPage';
 import DojoEtiquettePage from './components/DojoEtiquettePage';
+import GradingsPage from './components/GradingsPage';
 
 const App = () => {
   let page;
@@ -41,6 +42,9 @@ const App = () => {
       break;
     case '/dojo-etiquette':
       page = <DojoEtiquettePage />;
+      break;
+    case '/gradings':
+      page = <GradingsPage />;
       break;
     default:
       page = <HomePage />;
