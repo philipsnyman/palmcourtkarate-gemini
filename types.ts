@@ -1,7 +1,15 @@
+import type { ReactNode } from 'react';
+
 export interface MegaMenuLink {
   title: string;
   href: string;
   description: string;
+  icon?: ReactNode;
+}
+
+export interface MegaMenuColumn {
+  title: string;
+  links: MegaMenuLink[];
 }
 
 export interface TeamMember {
@@ -16,20 +24,40 @@ export interface InfoCard {
   description: string;
 }
 
+export interface FeaturedBlogPost {
+    title: string;
+    href: string;
+    description: string;
+    imageUrl: string;
+}
+
 export interface Affiliation {
-  name: string;
-  description: string;
-  logoUrl: string;
-  learnMoreUrl: string;
+    name: string;
+    description: string;
+    logoUrl: string;
+    learnMoreUrl: string;
+}
+
+export interface DanRankHolder {
+    name: string;
+    description: string;
+}
+
+export interface DanRank {
+    tagline: string;
+    japaneseName: string;
+    englishName: string;
+    description: string;
+    holders: DanRankHolder[];
 }
 
 export interface BlogPost {
   id: number;
   slug: string;
   title: string;
+  category: string;
   excerpt: string;
   imageUrl: string;
-  category: string;
   author: string;
   authorImageUrl: string;
   date: string;
@@ -38,14 +66,19 @@ export interface BlogPost {
 }
 
 export interface FaqItem {
-  question: string;
-  answer: React.ReactNode;
+    question: string;
+    answer: ReactNode;
 }
 
 export interface GradingComponent {
-  japaneseName: string;
-  englishName: string;
-  description: string;
+    japaneseName: string;
+    englishName: string;
+    description: string;
+}
+
+export interface BeltRankRequirement {
+    category: string;
+    description: string;
 }
 
 export interface BeltRank {
@@ -53,20 +86,5 @@ export interface BeltRank {
     beltName: string;
     imageUrl: string;
     description: string;
-    requirements: {
-        category: string;
-        description: string;
-    }[];
-}
-
-export interface TerminologyEntry {
-  japanese: string;
-  english: string;
-}
-
-export interface TerminologySection {
-  tagline?: string;
-  title: string;
-  description: string;
-  terms: TerminologyEntry[];
+    requirements: BeltRankRequirement[];
 }
