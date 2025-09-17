@@ -19,6 +19,7 @@ import SelfDefencePage from './components/SelfDefencePage';
 import SchedulePage from './components/SchedulePage';
 import FitnessPage from './components/FitnessPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfServicePage from './components/TermsOfServicePage';
 
 
 const App = () => {
@@ -86,6 +87,9 @@ const App = () => {
       break;
     case '/privacy-policy':
       page = <PrivacyPolicyPage />;
+      break;
+    case '/terms-of-service':
+      page = <TermsOfServicePage />;
       break;
     default:
       page = <HomePage />;

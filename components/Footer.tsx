@@ -88,7 +88,7 @@ const Footer = () => {
           <p>&copy; 2023 Palm Court Karate Centre. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="/privacy-policy" className="hover:text-black">Privacy Policy</a>
-            <a href="#" className="hover:text-black">Terms of Service</a>
+            <a href="/terms-of-service" className="hover:text-black">Terms of Service</a>
             <a href="#" className="hover:text-black">Cookies Settings</a>
           </div>
         </div>
