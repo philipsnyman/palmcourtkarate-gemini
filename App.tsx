@@ -18,6 +18,7 @@ import AdultsPage from './components/AdultsPage';
 import SelfDefencePage from './components/SelfDefencePage';
 import SchedulePage from './components/SchedulePage';
 import FitnessPage from './components/FitnessPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 
 
 const App = () => {
@@ -82,6 +83,9 @@ const App = () => {
       break;
     case '/contact-us':
       page = <ContactUsPage />;
+      break;
+    case '/privacy-policy':
+      page = <PrivacyPolicyPage />;
       break;
     default:
       page = <HomePage />;
