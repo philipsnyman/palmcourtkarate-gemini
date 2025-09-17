@@ -1,167 +1,160 @@
 import type { ReactNode } from 'react';
 
-export type MegaMenuLink = {
+export interface MegaMenuLink {
   title: string;
   href: string;
   description: string;
-};
+  icon?: ReactNode;
+}
 
-export type MegaMenuColumn = {
+export interface MegaMenuColumn {
   title: string;
   links: MegaMenuLink[];
-};
+}
 
-export type FeaturedBlogPost = {
-  title: string;
-  href: string;
-  imageUrl: string;
-  description: string;
-};
-
-export type TeamMember = {
-  imageUrl: string;
+export interface TeamMember {
   name: string;
   role: string;
+  imageUrl: string;
   learnMoreUrl?: string;
-};
+}
 
-export type InfoCard = {
+export interface InfoCard {
   title: string;
   description: string;
-};
+}
 
-export type Affiliation = {
-  name: string;
-  description: string;
-  learnMoreUrl: string;
-  logoUrl: string;
-};
+export interface FeaturedBlogPost {
+    title: string;
+    href: string;
+    description: string;
+    imageUrl: string;
+}
 
-export type DanRankHolder = {
+export interface Affiliation {
     name: string;
-    description?: string;
-};
+    description: string;
+    logoUrl: string;
+    learnMoreUrl: string;
+}
 
-export type DanRank = {
+export interface DanRankHolder {
+    name: string;
+    description: string;
+}
+
+export interface DanRank {
     tagline: string;
     japaneseName: string;
     englishName: string;
     description: string;
     holders: DanRankHolder[];
-};
+}
 
-export type BlogPost = {
-  id: string;
+export interface BlogPost {
+  id: number;
   slug: string;
-  imageUrl: string;
   title: string;
   category: string;
   excerpt: string;
-  authorImageUrl: string;
+  imageUrl: string;
   author: string;
+  authorImageUrl: string;
   date: string;
   readTimeInMinutes: number;
-  isFeatured?: boolean;
-};
+  isFeatured: boolean;
+}
 
-export type FaqItem = {
-  question: string;
-  answer: string | ReactNode;
-};
+export interface FaqItem {
+    question: string;
+    answer: ReactNode;
+}
 
-export type DojoKun = {
-    title: string;
+export interface GradingComponent {
+    japaneseName: string;
+    englishName: string;
     description: string;
-    quote: string;
-    author: {
-        name: string;
-        imageUrl: string;
-    };
-};
+}
 
-export type GradingComponent = {
-  japaneseName: string;
-  englishName: string;
-  description: string;
-};
-
-export type BeltRank = {
-  imageUrl: string;
-  kyu: string;
-  beltName: string;
-  description: string;
-  requirements: {
+export interface BeltRankRequirement {
     category: string;
     description: string;
-  }[];
-};
+}
 
-export type SelfDefenceLevel = {
-    title: string;
-    description: string;
+export interface BeltRank {
+    kyu: string;
+    beltName: string;
     imageUrl: string;
-};
-
-export type SelfDefenceFeature = {
-    title: string;
     description: string;
-};
+    requirements: BeltRankRequirement[];
+}
 
-export type Lecture = {
-    imageUrl: string;
-    category: string;
-    title: string;
-    description: string;
-};
-
-export type ScheduleItem = {
-    time: string;
-    name: string;
-    instructor: string;
-};
-
-export type ScheduleDay = {
-    day: string;
-    classes: ScheduleItem[];
-};
-
-export type HistorySection = {
-    title: string;
-    description: string;
-    imageUrl: string;
-    imageAlt: string;
-};
-
-export type PricingPlan = {
-    name: string;
-    description: string;
-};
-
-export type PricingFeature = {
-    name: string;
-    values: (string | boolean)[];
-};
-
-export type PricingCategory = {
-    name: string;
-    features: PricingFeature[];
-};
-
-export type PricingTab = {
-    name: string;
-    plans: PricingPlan[];
-    categories: PricingCategory[];
-};
-
-export type Terminology = {
-  japaneseName: string;
-  englishName: string;
-};
-
-export type TerminologySection = {
+export interface HistorySection {
   title: string;
-  japaneseTitle?: string;
   description: string;
-  columns: number;
-  terms: Terminology[];
-};
+  imageUrl: string;
+  imageAlt: string;
+}
+
+export interface TerminologyEntry {
+    japaneseName: string;
+    englishName: string;
+}
+
+export interface TerminologySection {
+    title: string;
+    japaneseTitle?: string;
+    description: string;
+    terms: TerminologyEntry[];
+    columns: number;
+}
+
+export interface PricingFeature {
+  name: string;
+  values: (string | boolean)[];
+}
+
+export interface PricingPlan {
+  name: string;
+  description: string;
+}
+
+export interface PricingCategory {
+  name: string;
+  features: PricingFeature[];
+}
+
+export interface PricingTab {
+  name: string;
+  plans: PricingPlan[];
+  categories: PricingCategory[];
+}
+
+export interface SelfDefenceLevel {
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
+export interface SelfDefenceFeature {
+    title: string;
+    description: string;
+}
+
+export interface Lecture {
+    category: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
+export interface ScheduleClass {
+  time: string;
+  name: string;
+  instructor: string;
+}
+
+export interface DailySchedule {
+  day: string;
+  classes: ScheduleClass[];
+}
