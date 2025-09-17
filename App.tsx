@@ -22,6 +22,7 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import CookieSettingsPage from './components/CookieSettingsPage';
 import AuthPage from './components/AuthPage';
+import ForgotPasswordPage from './components/ForgotPasswordPage';
 
 
 const App = () => {
@@ -35,6 +36,9 @@ const App = () => {
     // Auth
     case '/auth':
       page = <AuthPage />;
+      break;
+    case '/forgot-password':
+      page = <ForgotPasswordPage />;
       break;
     // About Us
     case '/our-dojo':
