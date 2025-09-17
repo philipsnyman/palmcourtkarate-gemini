@@ -1,8 +1,11 @@
-import React from 'react';
 import { affiliationsData } from '../constants';
 import type { Affiliation } from '../types';
 
-const AffiliationCard: React.FC<{ affiliation: Affiliation }> = ({ affiliation }) => (
+type AffiliationCardProps = {
+    affiliation: Affiliation;
+};
+
+const AffiliationCard = ({ affiliation }: AffiliationCardProps) => (
     <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-12">
         <div className="md:col-span-2">
             <p className="text-sm font-semibold text-gray-600 mb-2 tracking-wide">Affiliate</p>
@@ -18,7 +21,7 @@ const AffiliationCard: React.FC<{ affiliation: Affiliation }> = ({ affiliation }
     </div>
 );
 
-const AffiliationsPage: React.FC = () => {
+const AffiliationsPage = () => {
     return (
         <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">

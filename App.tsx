@@ -1,20 +1,40 @@
-import React from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import InfoSection from './components/InfoSection';
-import TeamSection from './components/TeamSection';
-import TournamentsSection from './components/TournamentsSection';
 import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import AffiliationsPage from './components/AffiliationsPage';
+import BlackBeltsPage from './components/BlackBeltsPage';
+import BlogPage from './components/BlogPage';
+import ContactUsPage from './components/ContactUsPage';
 
-const App: React.FC = () => {
+const App = () => {
+  let page;
+
+  // Simple router
+  switch (window.location.pathname) {
+    case '/':
+      page = <HomePage />;
+      break;
+    case '/affiliations':
+      page = <AffiliationsPage />;
+      break;
+    case '/black-belts':
+      page = <BlackBeltsPage />;
+      break;
+    case '/blog':
+      page = <BlogPage />;
+      break;
+    case '/contact-us':
+      page = <ContactUsPage />;
+      break;
+    default:
+      page = <HomePage />;
+  }
+
   return (
-    <div className="bg-white">
+    <div className="bg-white flex flex-col min-h-screen">
       <Header />
-      <main>
-        <Hero />
-        <InfoSection />
-        <TeamSection />
-        <TournamentsSection />
+      <main className="flex-grow">
+        {page}
       </main>
       <Footer />
     </div>

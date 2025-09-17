@@ -1,8 +1,11 @@
+import type { ReactNode } from 'react';
 
+type FooterLinkProps = {
+  href: string;
+  children: ReactNode;
+};
 
-import React from 'react';
-
-const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+const FooterLink = ({ href, children }: FooterLinkProps) => (
   <li>
     <a href={href} className="text-gray-500 hover:text-black transition-colors">
       {children}
@@ -10,21 +13,23 @@ const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({ hre
   </li>
 );
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-8">
           
           <div className="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-2 mb-8 xl:mb-0">
-            <h3 className="text-xl font-bold tracking-widest text-amber-800 mb-4" style={{ letterSpacing: '0.2em' }}>
-              PALM COURT KARATE
-            </h3>
-            <p className="font-semibold mb-1">Address:</p>
-            <p className="text-gray-600 mb-4">27 Janssens Rd, Constantia Kloof, Roodepoort, 1709</p>
-            <p className="font-semibold mb-1">Contact:</p>
-            <a href="tel:+27832286331" className="text-gray-600 block hover:text-black">+27 (0)83 228 6331</a>
-            <a href="mailto:info@palmcourtkarate.co.za" className="text-gray-600 block hover:text-black">info@palmcourtkarate.co.za</a>
+             <a href="/" className="inline-block mb-6">
+                <img src="/images/PALM-COURT-KARATE.png" alt="Palm Court Karate Logo" className="h-10 w-auto"/>
+            </a>
+            <div className="text-sm">
+                <p className="font-semibold mb-1">Address:</p>
+                <p className="text-gray-600 mb-4">27 Janssens Rd, Constantia Kloof, Roodepoort, 1709</p>
+                <p className="font-semibold mb-1">Contact:</p>
+                <a href="tel:+27832286331" className="text-gray-600 block hover:text-black">+27 (0)83 228 6331</a>
+                <a href="mailto:info@palmcourtkarate.co.za" className="text-gray-600 block hover:text-black">info@palmcourtkarate.co.za</a>
+            </div>
             <div className="flex space-x-4 mt-6">
               <a href="#" className="text-gray-500 hover:text-black"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
               <a href="#" className="text-gray-500 hover:text-black"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.25-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg></a>
@@ -34,18 +39,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div>
-            <h4 className="font-bold mb-4">Navigation</h4>
-            <ul className="space-y-2">
-              <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/black-belts">Black Belts</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/contact-us">Contact Us</FooterLink>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-4">About Us</h4>
+          <div className="text-sm">
+            <h4 className="font-bold mb-4 text-base">About Us</h4>
             <ul className="space-y-2">
               <FooterLink href="#">Our Dojo</FooterLink>
               <FooterLink href="#">Facilities</FooterLink>
@@ -54,8 +49,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-4">Courses</h4>
+          <div className="text-sm">
+            <h4 className="font-bold mb-4 text-base">Courses</h4>
             <ul className="space-y-2">
               <FooterLink href="#">Pre-School</FooterLink>
               <FooterLink href="#">Scholars</FooterLink>
@@ -64,8 +59,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-4">Karate</h4>
+          <div className="text-sm">
+            <h4 className="font-bold mb-4 text-base">Karate</h4>
             <ul className="space-y-2">
               <FooterLink href="#">History</FooterLink>
               <FooterLink href="#">Dojo Etiquette</FooterLink>
@@ -73,6 +68,17 @@ const Footer: React.FC = () => {
               <FooterLink href="#">Gradings</FooterLink>
             </ul>
           </div>
+          
+          <div className="text-sm">
+            <h4 className="font-bold mb-4 text-base">Navigate</h4>
+            <ul className="space-y-2">
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/black-belts">Black Belts</FooterLink>
+              <FooterLink href="/blog">Blog</FooterLink>
+              <FooterLink href="/contact-us">Contact Us</FooterLink>
+            </ul>
+          </div>
+
 
         </div>
         

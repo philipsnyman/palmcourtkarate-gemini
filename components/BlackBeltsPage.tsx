@@ -1,8 +1,6 @@
-import React from 'react';
 import { danRanksData } from '../constants';
-import type { DanRank } from '../types';
 
-const BlackBeltsPage: React.FC = () => {
+const BlackBeltsPage = () => {
     return (
         <div className="bg-white">
             <header className="py-16 text-center">
@@ -12,11 +10,11 @@ const BlackBeltsPage: React.FC = () => {
                         <p className="text-base md:text-lg text-gray-600 mb-6">
                             Join Palm Court Karate Centre and embark on a journey to become a black belt in traditional Okinawa Goju-Ryu Karate-Do. Our internationally recognized dojo offers high-quality instruction for preschoolers, children, and adults.
                         </p>
-                        <div className="flex justify-center space-x-4">
-                            <a href="#" className="inline-block px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors">
+                        <div className="flex justify-center gap-4">
+                            <a href="#" className="inline-block px-8 py-3 bg-amber-800 text-white font-semibold rounded-md hover:bg-amber-900 transition-colors shadow">
                                 Learn More
                             </a>
-                            <a href="#" className="inline-block px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition-colors">
+                            <a href="#" className="inline-block px-8 py-3 bg-gray-100 text-amber-800 font-semibold rounded-md hover:bg-gray-200 transition-colors">
                                 Sign Up
                             </a>
                         </div>
@@ -24,7 +22,7 @@ const BlackBeltsPage: React.FC = () => {
                 </div>
             </header>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 <div className="mb-12">
                     <img 
                         src="/images/pck-black-belts.jpeg" 
@@ -49,11 +47,10 @@ const BlackBeltsPage: React.FC = () => {
                                 
                                 {/* Right Column */}
                                 <div className="lg:col-span-2">
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
                                         {rank.holders.map(holder => (
                                             <div key={holder.name}>
-                                                <h3 className="text-md font-semibold text-gray-800">{holder.name}</h3>
-                                                <p className="text-sm text-gray-500">{holder.description}</p>
+                                                <h3 className="text-lg font-semibold text-gray-800">{holder.name}</h3>
                                             </div>
                                         ))}
                                     </div>

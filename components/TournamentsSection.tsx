@@ -1,10 +1,9 @@
-
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 const SLIDE_COUNT = 7;
 const slides = Array.from({ length: SLIDE_COUNT }, (_, i) => `https://picsum.photos/600/400?random=${i}`);
 
-const TournamentsSection: React.FC = () => {
+const TournamentsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = useCallback(() => {
@@ -37,11 +36,11 @@ const TournamentsSection: React.FC = () => {
         <div className="relative">
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform ease-in-out duration-500"
-              style={{ transform: `translateX(-${(100 / 5) * currentIndex}%)` }}
+              className="flex transition-transform ease-out duration-500"
+              style={{ transform: `translateX(-${(100 / (slides.length)) * currentIndex}%)` }}
             >
               {slides.map((src, index) => (
-                 <div key={index} className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2">
+                 <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 px-2">
                   <div className="bg-gray-200 aspect-w-4 aspect-h-3 flex items-center justify-center">
                     <img src={src} alt={`Tournament scene ${index + 1}`} className="w-full h-full object-cover" />
                   </div>
@@ -50,9 +49,17 @@ const TournamentsSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex justify-between items-center mt-8">
-            <div className="flex space-x-2">
-              {Array.from({ length: SLIDE_COUNT }).map((_, dotIndex) => (
+          <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between items-center px-4">
+             <button onClick={prevSlide} className="bg-white/50 p-2 rounded-full hover:bg-white transition-colors shadow-md" aria-label="Previous slide">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button onClick={nextSlide} className="bg-white/50 p-2 rounded-full hover:bg-white transition-colors shadow-md" aria-label="Next slide">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+          </div>
+
+           <div className="flex justify-center space-x-2 pt-8">
+              {Array.from({ length: slides.length }).map((_, dotIndex) => (
                 <button
                   key={dotIndex}
                   onClick={() => setCurrentIndex(dotIndex)}
@@ -62,15 +69,6 @@ const TournamentsSection: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex space-x-3">
-              <button onClick={prevSlide} className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors" aria-label="Previous slide">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-              </button>
-              <button onClick={nextSlide} className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors" aria-label="Next slide">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
