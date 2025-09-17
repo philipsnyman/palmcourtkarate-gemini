@@ -85,7 +85,8 @@ const Footer = () => {
         </div>
         
         <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
-          <p>&copy; 2023 Palm Court Karate Centre. All rights reserved.</p>
+          {/* FIX: Use dynamic year for copyright */}
+          <p>&copy; {new Date().getFullYear()} Palm Court Karate Centre. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="#" className="hover:text-black">Privacy Policy</a>
             <a href="#" className="hover:text-black">Terms of Service</a>
