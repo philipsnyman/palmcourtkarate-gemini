@@ -6,8 +6,8 @@ export const megaMenuColumns: MegaMenuColumn[] = [
     title: 'About Us',
     links: [
       { title: 'Our Dojo', href: '#', description: 'Place of the Way' },
-      { title: 'Facilities', href: '#', description: 'Explore our training center' },
-      { title: 'Mario Sequeira', href: '#', description: 'Owner & Instructor' },
+      { title: 'Facilities', href: '/facilities', description: 'Explore our training center' },
+      { title: 'Mario Sequeira', href: '/mario-sequeira', description: 'Owner & Instructor' },
       { title: 'Affiliations', href: '/affiliations', description: 'Our karate connections' },
     ],
   },
@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Mario Sequeira',
     role: 'Owner & Head Instructor',
     imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop',
-    learnMoreUrl: '#',
+    learnMoreUrl: '/mario-sequeira',
   },
   {
     name: 'Zenobia Sequeira',

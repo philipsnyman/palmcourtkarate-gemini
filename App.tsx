@@ -5,6 +5,8 @@ import AffiliationsPage from './components/AffiliationsPage';
 import BlackBeltsPage from './components/BlackBeltsPage';
 import BlogPage from './components/BlogPage';
 import ContactUsPage from './components/ContactUsPage';
+import FacilitiesPage from './components/FacilitiesPage';
+import MarioSequeiraPage from './components/MarioSequeiraPage';
 
 const App = () => {
   let page;
@@ -13,6 +15,12 @@ const App = () => {
   switch (window.location.pathname) {
     case '/':
       page = <HomePage />;
+      break;
+    case '/facilities':
+      page = <FacilitiesPage />;
+      break;
+    case '/mario-sequeira':
+      page = <MarioSequeiraPage />;
       break;
     case '/affiliations':
       page = <AffiliationsPage />;
