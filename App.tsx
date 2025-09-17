@@ -10,6 +10,15 @@ import MarioSequeiraPage from './components/MarioSequeiraPage';
 import OurDojoPage from './components/OurDojoPage';
 import DojoEtiquettePage from './components/DojoEtiquettePage';
 import GradingsPage from './components/GradingsPage';
+import HistoryPage from './components/HistoryPage';
+import TerminologyPage from './components/TerminologyPage';
+import PreSchoolPage from './components/PreSchoolPage';
+import ScholarsPage from './components/ScholarsPage';
+import AdultsPage from './components/AdultsPage';
+import SelfDefencePage from './components/SelfDefencePage';
+import SchedulePage from './components/SchedulePage';
+import FitnessPage from './components/FitnessPage';
+
 
 const App = () => {
   let page;
@@ -19,6 +28,7 @@ const App = () => {
     case '/':
       page = <HomePage />;
       break;
+    // About Us
     case '/our-dojo':
       page = <OurDojoPage />;
       break;
@@ -31,6 +41,39 @@ const App = () => {
     case '/affiliations':
       page = <AffiliationsPage />;
       break;
+    // Karate
+    case '/history':
+      page = <HistoryPage />;
+      break;
+    case '/gradings':
+      page = <GradingsPage />;
+      break;
+    case '/dojo-etiquette':
+      page = <DojoEtiquettePage />;
+      break;
+    case '/terminology':
+      page = <TerminologyPage />;
+      break;
+    // Courses
+    case '/courses/pre-school':
+      page = <PreSchoolPage />;
+      break;
+    case '/courses/scholars':
+      page = <ScholarsPage />;
+      break;
+    case '/courses/adults':
+      page = <AdultsPage />;
+      break;
+    case '/courses/self-defence':
+      page = <SelfDefencePage />;
+      break;
+    case '/courses/fitness':
+      page = <FitnessPage />;
+      break;
+    // Other
+    case '/schedule':
+      page = <SchedulePage />;
+      break;
     case '/black-belts':
       page = <BlackBeltsPage />;
       break;
@@ -39,12 +82,6 @@ const App = () => {
       break;
     case '/contact-us':
       page = <ContactUsPage />;
-      break;
-    case '/dojo-etiquette':
-      page = <DojoEtiquettePage />;
-      break;
-    case '/gradings':
-      page = <GradingsPage />;
       break;
     default:
       page = <HomePage />;

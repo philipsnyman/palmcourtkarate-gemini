@@ -52,19 +52,20 @@ const Footer = () => {
           <div className="text-sm">
             <h4 className="font-bold mb-4 text-base">Courses</h4>
             <ul className="space-y-2">
-              <FooterLink href="#">Pre-School</FooterLink>
-              <FooterLink href="#">Scholars</FooterLink>
-              <FooterLink href="#">Adults</FooterLink>
-              <FooterLink href="#">Self Defence</FooterLink>
+              <FooterLink href="/courses/pre-school">Pre-School</FooterLink>
+              <FooterLink href="/courses/scholars">Scholars</FooterLink>
+              <FooterLink href="/courses/adults">Adults</FooterLink>
+              <FooterLink href="/courses/self-defence">Self Defence</FooterLink>
+              <FooterLink href="/courses/fitness">Fitness</FooterLink>
             </ul>
           </div>
 
           <div className="text-sm">
             <h4 className="font-bold mb-4 text-base">Karate</h4>
             <ul className="space-y-2">
-              <FooterLink href="#">History</FooterLink>
+              <FooterLink href="/history">History</FooterLink>
               <FooterLink href="/dojo-etiquette">Dojo Etiquette</FooterLink>
-              <FooterLink href="#">Terminology</FooterLink>
+              <FooterLink href="/terminology">Terminology</FooterLink>
               <FooterLink href="/gradings">Gradings</FooterLink>
             </ul>
           </div>
@@ -73,6 +74,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-base">Navigate</h4>
             <ul className="space-y-2">
               <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/schedule">Schedule</FooterLink>
               <FooterLink href="/black-belts">Black Belts</FooterLink>
               <FooterLink href="/blog">Blog</FooterLink>
               <FooterLink href="/contact-us">Contact Us</FooterLink>

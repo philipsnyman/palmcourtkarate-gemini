@@ -77,6 +77,7 @@ const Header = () => {
                                </div>
                             </div>
                         </div>
+                        <NavLink href="/schedule" className="py-2">Schedule</NavLink>
                         <NavLink href="/black-belts" className="py-2">Black Belts</NavLink>
                         <NavLink href="/blog" className="py-2">Blog</NavLink>
                         <NavLink href="/contact-us" className="py-2">Contact Us</NavLink>
@@ -120,6 +121,7 @@ const Header = () => {
                                 ))}
                             </div>
                         ))}
+                        <NavLink href="/schedule" className="block px-3 py-2 rounded-md text-base font-medium">Schedule</NavLink>
                         <NavLink href="/black-belts" className="block px-3 py-2 rounded-md text-base font-medium">Black Belts</NavLink>
                         <NavLink href="/blog" className="block px-3 py-2 rounded-md text-base font-medium">Blog</NavLink>
                         <NavLink href="/contact-us" className="block px-3 py-2 rounded-md text-base font-medium">Contact Us</NavLink>

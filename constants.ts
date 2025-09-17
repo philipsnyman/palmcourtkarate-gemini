@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -14,19 +14,20 @@ export const megaMenuColumns: MegaMenuColumn[] = [
   {
     title: 'Karate',
     links: [
-        { title: 'History', href: '#', description: 'The origins of Goju-Ryu' },
+        { title: 'History', href: '/history', description: 'The origins of Goju-Ryu' },
         { title: 'Gradings', href: '/gradings', description: 'The belt ranking system' },
         { title: 'Dojo Etiquette', href: '/dojo-etiquette', description: 'Begins and ends with respect' },
-        { title: 'Terminology', href: '#', description: 'Learn the Japanese terms' },
+        { title: 'Terminology', href: '/terminology', description: 'Learn the Japanese terms' },
     ]
   },
   {
     title: 'Courses',
     links: [
-      { title: 'Pre-School', href: '#', description: 'Fun intro for ages 3-5' },
-      { title: 'Scholars', href: '#', description: 'Karate for K1-12' },
-      { title: 'Adults', href: '#', description: 'Fitness & self-defense' },
-      { title: 'Self Defence', href: '#', description: 'Practical, real-world skills' },
+      { title: 'Pre-School', href: '/courses/pre-school', description: 'Fun intro for ages 3-5' },
+      { title: 'Scholars', href: '/courses/scholars', description: 'Karate for K1-12' },
+      { title: 'Adults', href: '/courses/adults', description: 'Fitness & self-defense' },
+      { title: 'Self Defence', href: '/courses/self-defence', description: 'Practical, real-world skills' },
+      { title: 'Fitness', href: '/courses/fitness', description: 'Improve strength & stamina' },
     ],
   },
 ];
@@ -529,4 +530,400 @@ export const beltRanksData: BeltRank[] = [
         { category: 'Fitness', description: 'TBC' },
         { category: 'Other Requirements', description: 'TBC' },
     ]},
+];
+
+export const historySectionsData: HistorySection[] = [
+    {
+        title: 'The Origins of Karate',
+        description: 'Karate originated on the small Japanese island of Okinawa, where the local people developed this martial art to defend themselves against armed invaders. Practicing in secret, they formed \'Karate-Do,\' which translates to \'the way of the empty hand.\' Over time, several styles emerged, including Goju-Ryu, meaning \'hard and gentle school.\' Goju-Ryu focuses on close-range self-defense techniques, incorporating circular blocks, joint manipulations, and low kicks, while blending dynamic tension with deep breathing exercises.',
+        imageUrl: 'https://images.unsplash.com/photo-1593352222347-1422794a0857?q=80&w=1200&auto=format&fit=crop',
+        imageAlt: 'Ancient Okinawan scroll depicting martial arts.',
+    },
+    {
+        title: 'Founders of the Goju-Ryu Karate Style',
+        description: 'Goju-Ryu was founded in the late 1920s by Chojun Miyagi, who was a dedicated student of Kanryo Higoanna. Higoanna, originally from Naha, Okinawa, had studied Chinese martial arts and brought these techniques back to Okinawa, laying the groundwork for the Naha-te style. Miyagi refined these methods further, introducing elements such as the Sanchin kata, and continued to teach until his passing. Ei’ichi Miyazato, one of his devoted students, later took on the leadership role, ensuring the preservation and global dissemination of Goju-Ryu.',
+        imageUrl: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop',
+        imageAlt: 'Portrait of Chojun Miyagi.',
+    },
+    {
+        title: 'Finding a Name',
+        description: 'The name Goju-Ryu was derived from the \'Bubishi,\' an ancient martial arts manuscript. During a tournament, a student of Miyagi was unable to name his school, prompting Miyagi to establish a formal identity. He chose \'Goju-Ryu,\' which translates to \'hard-soft style,\' symbolizing its distinctive combination of powerful strikes and smooth, flowing movements. This name was officially registered with the Butokukai, Japan\'s Martial Arts Association, in 1933, solidifying Goju-Ryu\'s status in the martial arts world.',
+        imageUrl: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1200&auto=format&fit=crop',
+        imageAlt: 'A page from the Bubishi manuscript.',
+    },
+    {
+        title: 'The Garden Dojo',
+        description: 'Miyagi\'s \'Garden Dojo\' emerged as a pivotal training hub in Okinawa, particularly in the post-WWII period. Here, he guided prominent students like Seiko Higa, Meitoku Yagi, and Ei’ichi Miyazato. These disciples played a crucial role in spreading Goju-Ryu beyond Okinawa, founding dojos globally and safeguarding Miyagi\'s teachings. After Miyagi\'s death, his students paid tribute to his legacy by establishing their own schools, thereby continuing the Goju-Ryu tradition.',
+        imageUrl: 'https://images.unsplash.com/photo-1574680096145-f844349f0409?q=80&w=1200&auto=format&fit=crop',
+        imageAlt: 'A traditional Japanese garden dojo setting.',
+    }
+];
+
+export const terminologySections: TerminologySection[] = [
+    {
+        title: 'Understanding the Black Belt Ranks',
+        description: 'The dan (段) ranking system is extensively utilized by Japanese, Okinawan, Korean, and various other martial arts organizations to indicate an individual\'s proficiency within a specific system. Originally employed as a ranking system to assess skill level in a particular discipline, it has its origins in a Go school during the Edo period. Since then, it has become integrated into the majority of modern Japanese fine and martial arts practices.',
+        columns: 5,
+        terms: [
+            { japaneseName: '初段 Shodan', englishName: '1st Dan' },
+            { japaneseName: '二段 Nidan', englishName: '2nd Dan' },
+            { japaneseName: '三段 Sandan', englishName: '3rd Dan' },
+            { japaneseName: '四段 Yondan', englishName: '4th Dan' },
+            { japaneseName: '五段 Godan', englishName: '5th Dan' },
+            { japaneseName: '六段 Rokudan', englishName: '6th Dan' },
+            { japaneseName: '七段 Nanadan', englishName: '7th Dan' },
+            { japaneseName: '八段 Hachidan', englishName: '8th Dan' },
+            { japaneseName: '九段 Kudan', englishName: '9th Dan' },
+            { japaneseName: '十段 Jūdan', englishName: '10th Dan' },
+        ]
+    },
+    {
+        title: 'Counting',
+        description: 'In Goju-Ryu Karate, counting during practice uses traditional Japanese numbers. Here\'s how to count from 1 to 10. These numbers are often used during repetitions of exercises, strikes, or techniques in training.',
+        columns: 5,
+        terms: [
+            { japaneseName: 'いち Ichi', englishName: 'One' },
+            { japaneseName: 'に Ni', englishName: 'Two' },
+            { japaneseName: 'さん San', englishName: 'Three' },
+            { japaneseName: 'し Shi', englishName: 'Four' },
+            { japaneseName: 'ご Go', englishName: 'Five' },
+            { japaneseName: 'ろく Roku', englishName: 'Six' },
+            { japaneseName: 'しち Shichi', englishName: 'Seven' },
+            { japaneseName: 'はち Hachi', englishName: 'Eight' },
+            { japaneseName: 'く Ku', englishName: 'Nine' },
+            { japaneseName: 'じゅう Jū', englishName: 'Ten' },
+        ]
+    },
+    {
+        title: 'General Terms',
+        description: 'These terms are important for understanding the culture, training structure, and techniques in Goju-Ryu karate.',
+        columns: 2,
+        terms: [
+            { japaneseName: '上段 Jōdan', englishName: 'Upper Area (Face)' },
+            { japaneseName: '中段 Chūdan', englishName: 'Middle Area (Chest)' },
+            { japaneseName: '下段 Gedan', englishName: 'Lower Area (Stomach)' },
+            { japaneseName: '構え Kamae', englishName: 'Combative Posture' },
+            { japaneseName: 'はじめ Hajime', englishName: 'Begin' },
+            { japaneseName: '正坐 Seiza', englishName: 'Sit Down' },
+            { japaneseName: '用意 Yoi', englishName: 'Ready' },
+            { japaneseName: '上げ Age', englishName: 'Stand up' },
+            { japaneseName: '左 Hidari', englishName: 'Left' },
+            { japaneseName: '止め Yame', englishName: 'Stop' },
+            { japaneseName: '右 Migi', englishName: 'Right' },
+            { japaneseName: '決め Kime', englishName: 'Focus' },
+            { japaneseName: '半 Han', englishName: 'Half' },
+            { japaneseName: '礼 Rei', englishName: 'Bow' },
+        ]
+    },
+    {
+        title: 'Stances',
+        japaneseTitle: '立ち',
+        description: 'In Goju-Ryu Karate, stances, or Dachi, form the foundation of strong techniques and balance. These stances focus on rootedness and fluid transitions.',
+        columns: 2,
+        terms: [
+            { japaneseName: '立ち Dachi', englishName: 'Stance' },
+            { japaneseName: '三戦立ち Sanchin Dachi', englishName: 'Hourglass Stance, Small Stance' },
+            { japaneseName: '閉足立ち Heisoku Dachi', englishName: 'Closed Foot Stance' },
+            { japaneseName: '前屈立ち Zenkutsu Dachi', englishName: 'Front, Stretched Stance' },
+            { japaneseName: '結び立ち Musubi Dachi', englishName: 'Heels Together, Feet Apart Stance' },
+            { japaneseName: '四股立ち Shiko Dachi', englishName: 'Straddle Leg Stance' },
+            { japaneseName: '平行立ち Heiko Dachi', englishName: 'Feet Shoulder-Width Apart Stance' },
+            { japaneseName: '猫足立ち Nekoashi Dachi', englishName: 'Cat Stance' },
+            { japaneseName: '八字立ち Hachiji Dachi', englishName: 'Natural Stance, Feet Slightly Apart' },
+        ]
+    },
+    {
+        title: 'Blocks',
+        japaneseTitle: '受け技',
+        description: 'In Goju-Ryu Karate, blocking techniques, known as Uke Waza, are fundamental for defense. These blocks are performed with precise timing and body movement to effectively neutralize attacks.',
+        columns: 2,
+        terms: [
+            { japaneseName: '受け Uke', englishName: 'Block' },
+            { japaneseName: '小受け Ko Uke', englishName: 'Wrist Block' },
+            { japaneseName: '上げ受け Age Uke', englishName: 'Rising Block' },
+            { japaneseName: '回し受け Mawashi Uke', englishName: 'Roundhouse Block' },
+            { japaneseName: '中段受け Chudan Uke', englishName: 'Chest Block' },
+            { japaneseName: '外受け Soto Uke', englishName: 'Outside Chest Block' },
+            { japaneseName: '下段払い Gedan Barai', englishName: 'Stomach Block' },
+            { japaneseName: '下段回し受け Gedan Mawashi Uke', englishName: 'Lower Roundhouse Block' },
+            { japaneseName: '引き受け Hiki Uke', englishName: 'Open Hand Chest Block' },
+            { japaneseName: '諸手受け Morote Uke', englishName: 'Double Block ( Chest and Stomach )' },
+        ]
+    },
+    {
+        title: 'Punches',
+        japaneseTitle: '突き技',
+        description: 'In Goju-Ryu Karate, punches, or Tsuki Waza, are key techniques that focus on power, precision, and proper body mechanics. These punches are executed with strong focus on form, breathing, and body alignment.',
+        columns: 2,
+        terms: [
+            { japaneseName: '突き Zuki', englishName: 'Punch' },
+            { japaneseName: '逆突き Gyaku Zuki', englishName: 'Reverse Punch' },
+            { japaneseName: '直突き Choku Zuki', englishName: 'Straight Punch' },
+            { japaneseName: '追い突き Oi Zuki', englishName: 'Lunge Punch' },
+            { japaneseName: '裏突き Ura Zuki', englishName: 'Short Punch' },
+            { japaneseName: '刻み突き Kizama Zuki', englishName: 'Jab' },
+            { japaneseName: '二本突き Nihon Zuki', englishName: 'Double Punch' },
+            { japaneseName: '諸手突き Morote Zuki', englishName: 'Double Punch ( Thrust of Both Hands )' },
+            { japaneseName: '三本突き Sanbon Zuki', englishName: 'Triple Punch' },
+        ]
+    },
+    {
+        title: 'Strikes',
+        japaneseTitle: '当て身技',
+        description: 'In Goju-Ryu Karate, strikes, or Atemi Waza, focus on delivering powerful and precise blows using various parts of the body. Goju-Ryu emphasizes close-range combat with controlled and powerful strikes, often using open-hand techniques for versatility.',
+        columns: 2,
+        terms: [
+            { japaneseName: '打ち Uchi', englishName: 'Strike' },
+            { japaneseName: '貫手 Nukite', englishName: 'Spear-Hand Thrust' },
+            { japaneseName: '猿臂打ち Empi Uchi', englishName: 'Elbow Strike' },
+            { japaneseName: '鉄槌打ち Tetsui Uchi', englishName: 'Hammer Fist Strike' },
+            { japaneseName: '裏拳打ち Uraken Uchi', englishName: 'Back Fist Strike' },
+            { japaneseName: '掌底打ち Shotei Uchi', englishName: 'Palm Heel Strike' },
+            { japaneseName: '手刀打ち Shuto Uchi', englishName: 'Knife-Hand Strike' },
+        ]
+    },
+    {
+        title: 'Kicking',
+        japaneseTitle: '蹴り技',
+        description: 'In Goju-Ryu Karate, kicking techniques, or Geri Waza, are essential and focus on both power and precision. Goju-Ryu emphasizes controlled, close-range kicks with a focus on maintaining balance and fluidity. Kicking in Goju-Ryu is often combined with hand techniques for an effective offense.',
+        columns: 2,
+        terms: [
+            { japaneseName: '蹴り Geri', englishName: 'Kick' },
+            { japaneseName: '関節蹴り Kansetse Geri', englishName: 'Stamping Kick' },
+            { japaneseName: '前蹴り Mae Geri', englishName: 'Front Kick' },
+            { japaneseName: '膝蹴り Hiza Geri', englishName: 'Knee Kick' },
+            { japaneseName: '回し蹴り Mawashi Geri', englishName: 'Roundhouse Kick' },
+            { japaneseName: '足払い Ashibarai', englishName: 'Foot Sweep' },
+            { japaneseName: '横蹴り蹴込み Yoko Geri Kekomi', englishName: 'Side Thrust Kick' },
+            { japaneseName: '前飛び蹴り Mae Tobi Geri', englishName: 'Jumping Front Kick' },
+            { japaneseName: '後ろ蹴り Ushiro Geri', englishName: 'Back Kick' },
+        ]
+    },
+    {
+        title: 'Practice Fighting',
+        japaneseTitle: '組手',
+        description: 'In Goju-Ryu Karate, practice fighting (kumite) integrates both soft and hard techniques, aligning with the style’s focus on balance between flexibility and power.',
+        columns: 2,
+        terms: [
+            { japaneseName: '組手 Kumite', englishName: 'Sparring ( During a Tournament )' },
+            { japaneseName: '乱取り Randori', englishName: 'Slow Continuous Sparring ( Emphasising Technique )' },
+            { japaneseName: '基本一本 Kihon Ippon', englishName: 'One Step Sparring' },
+            { japaneseName: '自由組手 Jiyu Kumite', englishName: 'Hard and Fast Controlled Freestyle Fighting' },
+        ]
+    },
+    {
+        title: 'Supplementary Exercises',
+        japaneseTitle: '補助運動',
+        description: 'Hojo Undo refers to supplementary training exercises in traditional karate, particularly in Goju-Ryu. These exercises use specialized tools to condition the body and develop strength, endurance, and technique, focusing on functional fitness for martial arts.',
+        columns: 2,
+        terms: [
+            { japaneseName: '鎚子 Chishi', englishName: 'Concrete or Stone Weight on a Wooden Handle' },
+            { japaneseName: '巻藁 Makiwara', englishName: 'Striking Post with Rubber Padding' },
+            { japaneseName: '握り瓶 Nigiri Game', englishName: 'Gripping Jars' },
+            { japaneseName: '金剛圏 Kongoken', englishName: 'Heavy Rectangular Hoop' },
+        ]
+    },
+];
+
+export const pricingTabsData: PricingTab[] = [
+    {
+        name: 'Pre-School',
+        plans: [
+            { name: 'Once a Week', description: 'R400 per month' },
+            { name: 'Twice a Week', description: 'R500 per month' },
+            { name: 'Unlimited', description: 'R600 per month' },
+        ],
+        categories: [
+            {
+                name: 'Features',
+                features: [
+                    { name: 'Access to all Pre-School classes', values: [true, true, true] },
+                    { name: 'Flexible attendance', values: [false, true, true] },
+                    { name: 'Personalised attention', values: [true, true, true] },
+                    { name: 'Progress tracking', values: [false, true, true] },
+                    { name: 'Access to special events', values: [false, false, true] },
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Junior Scholars',
+        plans: [
+            { name: 'Basic', description: 'R500 per month' },
+            { name: 'Intermediate', description: 'R600 per month' },
+            { name: 'Advanced', description: 'R700 per month' },
+        ],
+        categories: [
+            {
+                name: 'Features',
+                features: [
+                    { name: 'Access to all Junior Scholar classes', values: [true, true, true] },
+                    { name: 'Grading opportunities', values: [true, true, true] },
+                    { name: 'Access to workshops', values: [false, true, true] },
+                    { name: 'Competition training', values: [false, false, true] },
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Senior Scholars',
+        plans: [
+            { name: 'Basic', description: 'R600 per month' },
+            { name: 'Intermediate', description: 'R700 per month' },
+            { name: 'Advanced', description: 'R800 per month' },
+        ],
+        categories: [
+            {
+                name: 'Features',
+                features: [
+                    { name: 'Access to all Senior Scholar classes', values: [true, true, true] },
+                    { name: 'Advanced kata training', values: [true, true, true] },
+                    { name: 'Leadership opportunities', values: [false, true, true] },
+                    { name: 'International competitions', values: [false, false, true] },
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Adults',
+        plans: [
+            { name: 'Standard', description: 'R700 per month' },
+            { name: 'Premium', description: 'R800 per month' },
+            { name: 'Elite', description: 'R900 per month' },
+        ],
+        categories: [
+            {
+                name: 'Features',
+                features: [
+                    { name: 'Access to all Adult classes', values: [true, true, true] },
+                    { name: 'Self-defence workshops', values: [true, true, true] },
+                    { name: 'Advanced weapon training', values: [false, true, true] },
+                    { name: 'Instructor training program', values: [false, false, true] },
+                ]
+            }
+        ]
+    }
+];
+
+export const selfDefenceLevels: SelfDefenceLevel[] = [
+    {
+        title: 'Level 1 Self Defence Course',
+        description: 'This comprehensive four-hour course provides instruction on preventative measures and fundamental practical techniques including: preventative and awareness strategies, mental and physical self-defense tactics, conflict avoidance strategies, and vital body targeting techniques. Additionally, the course covers anti-hijack safety procedures.',
+        imageUrl: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+        title: 'Level 2 Self Defence Course',
+        description: 'Full-day comprehensive theoretical and practical course covering preventative measures, awareness, mental self-defense, physical self-defense, important points to remember, rules for confrontation, practical application, rape prevention, basic anti-hijacking techniques, and EMS self-defense.',
+        imageUrl: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+        title: 'Level 3 Self Defence Course',
+        description: '8-hour reality-based scenario training covering preventative measures, awareness, mental and physical self-defense, key points for confrontation, practical application, rape prevention, basic anti-hijacking techniques, and EMS self-defense. Requirements include martial arts experience or a level 2 certificate.',
+        imageUrl: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=800&auto=format&fit=crop',
+    },
+];
+
+export const selfDefenceFeatures: SelfDefenceFeature[] = [
+    { title: 'High School Girls', description: 'This comprehensive course is specifically tailored for high school students, emphasizing both the theoretical and practical aspects of self-defense techniques. (8-Hour Course)' },
+    { title: 'Male Self-Defence', description: 'TBC' },
+    { title: 'Security Guards', description: 'Security Guard Training in Unarmed Defense and Baton Techniques' },
+    { title: 'Medical Staff', description: 'Training for medical personnel such as nurses and paramedics in defensive techniques.' },
+    { title: 'School Teachers', description: 'Training for school personnel such as teachers and administrators in defensive techniques.' },
+];
+
+export const lecturesData: Lecture[] = [
+    {
+        category: 'Scholars',
+        title: 'Primary and High School',
+        description: 'Lectures on the self-defense mindset and the importance of respect.',
+        imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+        category: 'Adults',
+        title: 'Corporate and University',
+        description: 'Lectures on Self-Defense Mindset and Martial Arts Principles in Practical Applications',
+        imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
+    }
+];
+
+export const selfDefenceFaqs: FaqItem[] = [
+    {
+        question: 'What is self-defence?',
+        answer: 'Self-defence is the practice of techniques and strategies to protect oneself from physical harm or danger.'
+    },
+    {
+        question: 'Who can take these courses?',
+        answer: 'Our Self-Defence courses are open to individuals of all ages and fitness levels.'
+    },
+    {
+        question: 'Are the courses hands-on?',
+        answer: 'Yes, our Self-Defence courses are highly interactive and practical, focusing on real-life scenarios.'
+    },
+    {
+        question: 'What will I learn?',
+        answer: 'In our Self-Defence courses, you will learn effective techniques to disable an attacker and escape safely.'
+    },
+    {
+        question: 'How long are the courses?',
+        answer: 'The duration of our Self-Defence courses varies depending on the program, ranging from a few weeks to several months.'
+    },
+];
+
+export const scheduleData: DailySchedule[] = [
+    {
+        day: 'Monday',
+        classes: [
+            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
+            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
+            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+        ],
+    },
+    {
+        day: 'Tuesday',
+        classes: [
+            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
+            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+        ],
+    },
+    {
+        day: 'Wednesday',
+        classes: [
+            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
+            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
+            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+        ],
+    },
+    {
+        day: 'Thursday',
+        classes: [
+            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
+            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+        ],
+    },
+    {
+        day: 'Friday',
+        classes: [
+            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
+            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+        ],
+    },
+    {
+        day: 'Saturday',
+        classes: [
+            { time: '08:00 - 09:00', name: 'All Grades', instructor: 'Sensei Mario' },
+        ],
+    },
 ];

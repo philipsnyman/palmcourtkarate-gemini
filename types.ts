@@ -88,3 +88,73 @@ export interface BeltRank {
     description: string;
     requirements: BeltRankRequirement[];
 }
+
+export interface HistorySection {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+}
+
+export interface TerminologyEntry {
+    japaneseName: string;
+    englishName: string;
+}
+
+export interface TerminologySection {
+    title: string;
+    japaneseTitle?: string;
+    description: string;
+    terms: TerminologyEntry[];
+    columns: number;
+}
+
+export interface PricingFeature {
+  name: string;
+  values: (string | boolean)[];
+}
+
+export interface PricingPlan {
+  name: string;
+  description: string;
+}
+
+export interface PricingCategory {
+  name: string;
+  features: PricingFeature[];
+}
+
+export interface PricingTab {
+  name: string;
+  plans: PricingPlan[];
+  categories: PricingCategory[];
+}
+
+export interface SelfDefenceLevel {
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
+export interface SelfDefenceFeature {
+    title: string;
+    description: string;
+}
+
+export interface Lecture {
+    category: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
+export interface ScheduleClass {
+  time: string;
+  name: string;
+  instructor: string;
+}
+
+export interface DailySchedule {
+  day: string;
+  classes: ScheduleClass[];
+}
