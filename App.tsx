@@ -12,7 +12,7 @@ import DojoEtiquettePage from './components/DojoEtiquettePage';
 import GradingsPage from './components/GradingsPage';
 import HistoryPage from './components/HistoryPage';
 import TerminologyPage from './components/TerminologyPage';
-import PreSchoolPage from './components/PreSchoolPage';
+import PeeWeePage from './components/PreSchoolPage';
 import ScholarsPage from './components/ScholarsPage';
 import AdultsPage from './components/AdultsPage';
 import SelfDefencePage from './components/SelfDefencePage';
@@ -55,8 +55,8 @@ const App = () => {
       page = <TerminologyPage />;
       break;
     // Courses
-    case '/courses/pre-school':
-      page = <PreSchoolPage />;
+    case '/courses/pee-wee':
+      page = <PeeWeePage />;
       break;
     case '/courses/scholars':
       page = <ScholarsPage />;

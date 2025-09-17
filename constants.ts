@@ -23,7 +23,7 @@ export const megaMenuColumns: MegaMenuColumn[] = [
   {
     title: 'Courses',
     links: [
-      { title: 'Pre-School', href: '/courses/pre-school', description: 'Fun intro for ages 3-5' },
+      { title: 'Pee-Wee', href: '/courses/pee-wee', description: 'Fun intro for ages 3-5' },
       { title: 'Scholars', href: '/courses/scholars', description: 'Karate for K1-12' },
       { title: 'Adults', href: '/courses/adults', description: 'Fitness & self-defense' },
       { title: 'Self Defence', href: '/courses/self-defence', description: 'Practical, real-world skills' },
