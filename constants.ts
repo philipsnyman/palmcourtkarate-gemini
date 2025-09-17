@@ -563,7 +563,7 @@ export const terminologySections: TerminologySection[] = [
     {
         title: 'Understanding the Black Belt Ranks',
         description: 'The dan (段) ranking system is extensively utilized by Japanese, Okinawan, Korean, and various other martial arts organizations to indicate an individual\'s proficiency within a specific system. Originally employed as a ranking system to assess skill level in a particular discipline, it has its origins in a Go school during the Edo period. Since then, it has become integrated into the majority of modern Japanese fine and martial arts practices.',
-        columns: 5,
+        columns: 2,
         terms: [
             { japaneseName: '初段 Shodan', englishName: '1st Dan' },
             { japaneseName: '二段 Nidan', englishName: '2nd Dan' },
@@ -580,7 +580,7 @@ export const terminologySections: TerminologySection[] = [
     {
         title: 'Counting',
         description: 'In Goju-Ryu Karate, counting during practice uses traditional Japanese numbers. Here\'s how to count from 1 to 10. These numbers are often used during repetitions of exercises, strikes, or techniques in training.',
-        columns: 5,
+        columns: 2,
         terms: [
             { japaneseName: 'いち Ichi', englishName: 'One' },
             { japaneseName: 'に Ni', englishName: 'Two' },
@@ -597,7 +597,7 @@ export const terminologySections: TerminologySection[] = [
     {
         title: 'General Terms',
         description: 'These terms are important for understanding the culture, training structure, and techniques in Goju-Ryu karate.',
-        columns: 2,
+        columns: 3,
         terms: [
             { japaneseName: '上段 Jōdan', englishName: 'Upper Area (Face)' },
             { japaneseName: '中段 Chūdan', englishName: 'Middle Area (Chest)' },
