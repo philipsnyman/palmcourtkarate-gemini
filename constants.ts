@@ -5,7 +5,7 @@ export const megaMenuColumns: MegaMenuColumn[] = [
   {
     title: 'About Us',
     links: [
-      { title: 'Our Dojo', href: '#', description: 'Place of the Way' },
+      { title: 'Our Dojo', href: '/our-dojo', description: 'Place of the Way' },
       { title: 'Facilities', href: '/facilities', description: 'Explore our training center' },
       { title: 'Mario Sequeira', href: '/mario-sequeira', description: 'Owner & Instructor' },
       { title: 'Affiliations', href: '/affiliations', description: 'Our karate connections' },

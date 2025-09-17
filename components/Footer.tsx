@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="text-sm">
             <h4 className="font-bold mb-4 text-base">About Us</h4>
             <ul className="space-y-2">
-              <FooterLink href="#">Our Dojo</FooterLink>
+              <FooterLink href="/our-dojo">Our Dojo</FooterLink>
               <FooterLink href="/facilities">Facilities</FooterLink>
               <FooterLink href="/mario-sequeira">Mario Sequeira</FooterLink>
               <FooterLink href="/affiliations">Affiliations</FooterLink>
