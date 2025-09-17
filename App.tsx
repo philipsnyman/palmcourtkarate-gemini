@@ -12,7 +12,7 @@ import DojoEtiquettePage from './components/DojoEtiquettePage';
 import GradingsPage from './components/GradingsPage';
 import HistoryPage from './components/HistoryPage';
 import TerminologyPage from './components/TerminologyPage';
-import PeeWeePage from './components/PreSchoolPage';
+import PreSchoolPage from './components/PreSchoolPage';
 import ScholarsPage from './components/ScholarsPage';
 import AdultsPage from './components/AdultsPage';
 import SelfDefencePage from './components/SelfDefencePage';
@@ -21,6 +21,7 @@ import FitnessPage from './components/FitnessPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfServicePage from './components/TermsOfServicePage';
 import CookieSettingsPage from './components/CookieSettingsPage';
+import AuthPage from './components/AuthPage';
 
 
 const App = () => {
@@ -30,6 +31,10 @@ const App = () => {
   switch (window.location.pathname) {
     case '/':
       page = <HomePage />;
+      break;
+    // Auth
+    case '/auth':
+      page = <AuthPage />;
       break;
     // About Us
     case '/our-dojo':
@@ -59,7 +64,7 @@ const App = () => {
       break;
     // Courses
     case '/courses/pee-wee':
-      page = <PeeWeePage />;
+      page = <PreSchoolPage />;
       break;
     case '/courses/scholars':
       page = <ScholarsPage />;
