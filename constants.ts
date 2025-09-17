@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -16,7 +16,7 @@ export const megaMenuColumns: MegaMenuColumn[] = [
     links: [
         { title: 'History', href: '#', description: 'The origins of Goju-Ryu' },
         { title: 'Gradings', href: '#', description: 'The belt ranking system' },
-        { title: 'Dojo Etiquette', href: '#', description: 'Begins and ends with respect' },
+        { title: 'Dojo Etiquette', href: '/dojo-etiquette', description: 'Begins and ends with respect' },
         { title: 'Terminology', href: '#', description: 'Learn the Japanese terms' },
     ]
   },
@@ -333,3 +333,56 @@ export const blogPostsData: BlogPost[] = [
         isFeatured: false,
     },
 ];
+
+const dojoEtiquetteRules = [
+    'Always be on time for your classes.',
+    'Remove shoes and all jewellery before entering the dojo.',
+    'Let seniors enter the dojo first.',
+    'Be polite to your instructors, seniors and elders.',
+    'Line up according to belt (the highest belt on the left of the dojo) and start warming up.',
+    'When entering and exiting the dojo, remember to bow.',
+    'When bowing at the beginning of the class, say ‘onegai shimasu”, which means ‘please teach me’. At the end of the class, you will bow again and say ‘arigato gozaimashita”, meaning ‘thank you for teaching me’.',
+    'While training, listen carefully and seriously to the advice of your sensei and always acknowledge that you have heard and understood the advice.',
+    'Keep your ‘gi’ (training clothes) neat and tidy.',
+    'Keep your fingernails and toe nails short to prevent injury.',
+    'Know your physical condition, stamina and strength well – do not force yourself to do the impossible.',
+    'Handle all equipment with care and put it back in the right place.',
+];
+
+export const dojoEtiquetteFaqs: FaqItem[] = [
+    {
+        question: 'What is dojo etiquette?',
+        // FIX: Replaced JSX with React.createElement to be compatible with a .ts file.
+        answer: React.createElement(
+            'ul',
+            { className: "list-disc pl-5 space-y-2 text-gray-600" },
+            dojoEtiquetteRules.map((rule, index) => React.createElement('li', { key: index }, rule))
+        )
+    },
+    {
+        question: 'Why is etiquette important?',
+        answer: 'Etiquette is important in a karate dojo as it creates a respectful and disciplined environment. It helps students develop self-discipline, focus, and humility, which are essential qualities in martial arts.'
+    },
+    {
+        question: 'How can I learn dojo etiquette?',
+        answer: 'Learning dojo etiquette is part of the karate training process. Instructors will teach and reinforce proper etiquette during classes, and students are expected to observe and follow the examples set by senior students.'
+    },
+    {
+        question: 'What happens if I break dojo etiquette?',
+        answer: 'Breaking dojo etiquette may result in disciplinary actions, such as verbal warnings, extra training, or temporary suspension from classes. It is important to understand and respect the rules of the dojo.'
+    },
+    {
+        question: 'Can I ask questions during training?',
+        answer: 'Yes, you can ask questions during training if you need clarification or guidance. However, it is important to wait for an appropriate time, such as a designated Q&A session, to minimize disruptions to the class.'
+    }
+];
+
+export const dojoKun = {
+    title: '道場訓 Dōjō kun',
+    description: 'The Dōjō Kun serves as a guiding framework for practitioners on their martial arts journey. It underscores the significance of pursuing truth, striving for excellence, exhibiting respect towards others, and cultivating harmony. This foundation promotes ongoing self-improvement and nurtures discipline among its members.',
+    quote: 'Hitotsu - Be humble and polite.<br/>Hitotsu - Train considering your physical strength<br/>Hitotsu - Practice earnestly with creativity.<br/>Hitotsu - Be calm and swift.<br/>Hitotsu - Take care of your health.<br/>Hitotsu - Live a plain life.<br/>Hitotsu - Do not be too proud or modest.<br/>Hitotsu - Continue your training with patience.',
+    author: {
+        name: 'Sensei Teruo Chinen',
+        imageUrl: '/images/Teruo-chinen.png'
+    }
+};

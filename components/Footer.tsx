@@ -63,7 +63,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-base">Karate</h4>
             <ul className="space-y-2">
               <FooterLink href="#">History</FooterLink>
-              <FooterLink href="#">Dojo Etiquette</FooterLink>
+              <FooterLink href="/dojo-etiquette">Dojo Etiquette</FooterLink>
               <FooterLink href="#">Terminology</FooterLink>
               <FooterLink href="#">Gradings</FooterLink>
             </ul>

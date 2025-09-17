@@ -64,3 +64,8 @@ export interface BlogPost {
   readTimeInMinutes: number;
   isFeatured: boolean;
 }
+
+export interface FaqItem {
+    question: string;
+    answer: ReactNode;
+}
