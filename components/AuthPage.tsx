@@ -101,7 +101,7 @@ const AuthPage = () => {
                                     <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
                                     {!isSignUp && (
                                          <div className="text-sm">
-                                            <a href="#" className="font-medium text-amber-800 hover:text-amber-700">Forgot your password?</a>
+                                            <a href="/forgot-password" className="font-medium text-amber-800 hover:text-amber-700">Forgot your password?</a>
                                         </div>
                                     )}
                                 </div>
