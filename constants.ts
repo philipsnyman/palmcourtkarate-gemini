@@ -383,7 +383,7 @@ export const dojoKun = {
     quote: 'Hitotsu - Be humble and polite.<br/>Hitotsu - Train considering your physical strength<br/>Hitotsu - Practice earnestly with creativity.<br/>Hitotsu - Be calm and swift.<br/>Hitotsu - Take care of your health.<br/>Hitotsu - Live a plain life.<br/>Hitotsu - Do not be too proud or modest.<br/>Hitotsu - Continue your training with patience.',
     author: {
         name: 'Sensei Teruo Chinen',
-        imageUrl: '/images/Teruo-chinen.png'
+        imageUrl: '/images/sensei-teruo-chinen.png'
     }
 };
 
