@@ -162,6 +162,7 @@ export interface DailySchedule {
 export interface UserData {
     name: string;
     email: string;
+    profilePictureUrl: string | null;
     currentRank: {
         name: string;
         kyu: string;

@@ -26,6 +26,7 @@ import AuthPage from './components/AuthPage';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
 import ChatWidget from './components/ChatWidget';
 import DashboardPage from './components/DashboardPage';
+import ProfilePage from './components/ProfilePage';
 
 
 const App = () => {
@@ -45,6 +46,9 @@ const App = () => {
       break;
     case '/dashboard':
       page = <DashboardPage />;
+      break;
+    case '/profile':
+      page = <ProfilePage />;
       break;
     // About Us
     case '/our-dojo':

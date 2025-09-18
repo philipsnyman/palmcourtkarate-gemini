@@ -8,6 +8,12 @@ type DashboardCardProps = {
     className?: string;
 };
 
+const UserPlaceholderIcon = () => (
+    <svg className="w-full h-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+);
+
 const DashboardCard = ({ title, children, className }: DashboardCardProps) => (
     <div className={`bg-white p-6 rounded-lg shadow-sm border border-gray-200 ${className}`}>
         <h2 className="text-xl font-bold text-gray-900 mb-4">{title}</h2>
@@ -56,10 +62,21 @@ const DashboardPage = () => {
         <div className="bg-gray-50 min-h-screen">
             <header className="bg-white border-b border-gray-200">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <h1 className="text-3xl font-bold text-gray-900">
-                        Welcome back, {user.name.split(' ')[0]}!
-                    </h1>
-                    <p className="text-gray-600 mt-1">Here's your personal dojo dashboard.</p>
+                    <div className="flex items-center space-x-4">
+                        <div className="w-16 h-16 rounded-full bg-gray-100 overflow-hidden border-2 border-gray-200 flex-shrink-0">
+                            {user.profilePictureUrl ? (
+                                <img src={user.profilePictureUrl} alt="Profile" className="w-full h-full object-cover" />
+                            ) : (
+                                <UserPlaceholderIcon />
+                            )}
+                        </div>
+                        <div>
+                            <h1 className="text-3xl font-bold text-gray-900">
+                                Welcome back, {user.name.split(' ')[0]}!
+                            </h1>
+                            <p className="text-gray-600 mt-1">Here's your personal dojo dashboard.</p>
+                        </div>
+                    </div>
                 </div>
             </header>
 
@@ -96,7 +113,7 @@ const DashboardPage = () => {
                                  <a href="#" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">
                                     <p className="font-semibold">Pay Fees</p>
                                 </a>
-                                 <a href="#" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">
+                                 <a href="/profile" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">
                                     <p className="font-semibold">View Profile</p>
                                 </a>
                                 <a href="/contact-us" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">

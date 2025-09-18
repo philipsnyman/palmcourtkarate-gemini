@@ -931,6 +931,7 @@ export const scheduleData: DailySchedule[] = [
 export const mockUserData: UserData = {
     name: 'Jane Doe',
     email: 'jane.doe@example.com',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop',
     currentRank: {
         name: 'Junior Orange Belt',
         kyu: '7th Kyu',
