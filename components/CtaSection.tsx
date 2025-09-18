@@ -18,7 +18,7 @@ const CtaSection = () => {
             Step onto the mat and discover the discipline, focus, and community at Palm Court Karate. Sign up for a trial class and experience the transformative power of traditional Goju-Ryu firsthand.
           </p>
           <a 
-            href="/booking" 
+            href="/auth" 
             className="inline-block px-10 py-4 bg-amber-700 text-white font-semibold text-lg rounded-md hover:bg-amber-800 transition-colors shadow-lg transform hover:scale-105"
           >
             Book a Trial Class

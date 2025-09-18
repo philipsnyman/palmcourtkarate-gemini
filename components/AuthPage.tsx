@@ -19,7 +19,9 @@ const AuthPage = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Handle form submission logic
-        alert(`${isSignUp ? 'Signing up' : 'Signing in'}...`);
+        alert(`Thank you for ${isSignUp ? 'signing up' : 'signing in'}! You will now be redirected to the booking page.`);
+        // Simulate redirect after successful auth
+        window.location.href = '/booking';
     };
 
     return (
