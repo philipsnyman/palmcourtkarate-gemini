@@ -1,3 +1,4 @@
+
 import { useState, type ReactNode, type FormEvent, type ChangeEvent } from 'react';
 
 type ContactInfoItemProps = {
@@ -102,9 +103,9 @@ const ContactUsPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-start">
-                    <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                    <div className={`p-8 rounded-lg border transition-all duration-500 ${isSubmitted ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}>
                         {isSubmitted ? (
-                            <div className="text-center flex flex-col items-center justify-center h-full min-h-[400px]">
+                            <div className="text-center flex flex-col items-center justify-center h-full min-h-[400px] animate-fade-in">
                                 <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
                                     <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { megaMenuColumns, featuredBlogPosts } from '../constants';
 import type { MegaMenuLink } from '../types';
+import { useAuth } from '../hooks/useAuth';
 
 type NavLinkProps = {
   href: string;
@@ -18,6 +19,7 @@ const NavLink = ({ href, children, className }: NavLinkProps) => (
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const { user, logout } = useAuth();
 
     return (
         <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
@@ -84,12 +86,25 @@ const Header = () => {
                     </nav>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href="/dashboard" className="px-5 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition-colors">
-                            Sign Up
-                        </a>
-                        <a href="/dashboard" className="px-5 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-black transition-colors">
-                            Login
-                        </a>
+                        {user ? (
+                            <>
+                                <a href="/dashboard" className="px-5 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition-colors">
+                                    Dashboard
+                                </a>
+                                <button onClick={logout} className="px-5 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-black transition-colors">
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                             <>
+                                <a href="/auth" className="px-5 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition-colors">
+                                    Sign Up
+                                </a>
+                                <a href="/auth" className="px-5 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-black transition-colors">
+                                    Login
+                                </a>
+                            </>
+                        )}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -108,31 +123,28 @@ const Header = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200">
+                <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <NavLink href="/" className="block px-3 py-2 rounded-md text-base font-medium">Home</NavLink>
-                        {megaMenuColumns.map(col => (
-                            <div key={col.title} className="py-2">
-                                <h3 className="px-3 font-semibold text-gray-500 uppercase tracking-wider text-sm">{col.title}</h3>
-                                {col.links.map(link => (
-                                    <a key={link.title} href={link.href} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                        {link.title}
-                                    </a>
-                                ))}
-                            </div>
-                        ))}
                         <NavLink href="/schedule" className="block px-3 py-2 rounded-md text-base font-medium">Schedule</NavLink>
                         <NavLink href="/black-belts" className="block px-3 py-2 rounded-md text-base font-medium">Black Belts</NavLink>
                         <NavLink href="/blog" className="block px-3 py-2 rounded-md text-base font-medium">Blog</NavLink>
                         <NavLink href="/contact-us" className="block px-3 py-2 rounded-md text-base font-medium">Contact Us</NavLink>
                     </div>
-                    <div className="p-4 border-t border-gray-200 flex items-center space-x-4">
-                       <a href="/dashboard" className="w-full text-center block px-6 py-3 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200 transition-colors font-semibold">
-                            Sign Up
-                        </a>
-                        <a href="/dashboard" className="w-full text-center block px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-black transition-colors font-semibold">
-                            Login
-                        </a>
+                     <div className="pt-4 pb-3 border-t border-gray-200">
+                        <div className="px-5 space-y-2">
+                             {user ? (
+                                <>
+                                    <a href="/dashboard" className="block w-full text-left px-4 py-2 text-base font-medium text-gray-700 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">Dashboard</a>
+                                    <button onClick={logout} className="block w-full text-left px-4 py-2 text-base font-medium text-white bg-gray-900 rounded-md hover:bg-black">Logout</button>
+                                </>
+                             ) : (
+                                <>
+                                    <a href="/auth" className="block w-full text-left px-4 py-2 text-base font-medium text-gray-700 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200">Sign Up</a>
+                                    <a href="/auth" className="block w-full text-left mt-2 px-4 py-2 text-base font-medium text-white bg-gray-900 rounded-md hover:bg-black">Login</a>
+                                </>
+                             )}
+                        </div>
                     </div>
                 </div>
             )}

@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useAuth } from '../hooks/useAuth';
 
 const GoogleIcon = () => (
-    <svg className="w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+    <svg className="w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w.org/2000/svg" viewBox="0 0 488 512">
         <path fill="currentColor" d="M488 261.8C488 403.3 381.5 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 126 23.4 172.9 61.9l-76.2 76.2C322.3 121.3 287.6 102.3 248 102.3c-73.4 0-134.3 59.4-134.3 132.8s60.9 132.8 134.3 132.8c76.3 0 119.5-50.5 124.3-76.8h-124.3v-95.2H488z"></path>
     </svg>
 );
@@ -15,10 +16,12 @@ const AppleIcon = () => (
 
 const AuthPage = () => {
     const [isSignUp, setIsSignUp] = useState(true);
+    const { login } = useAuth();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Handle form submission logic
+        // For demo purposes, we'll log in the default 'student' user on any successful auth action.
+        login('student');
         alert(`Thank you for ${isSignUp ? 'signing up' : 'signing in'}! You will now be redirected to the booking page.`);
         // Simulate redirect after successful auth
         window.location.href = '/booking';

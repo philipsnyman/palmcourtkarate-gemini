@@ -1,3 +1,4 @@
+import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -29,8 +30,7 @@ import DashboardPage from './components/DashboardPage';
 import ProfilePage from './components/ProfilePage';
 import BookingPage from './components/BookingPage';
 
-
-const App = () => {
+const AppContent = () => {
   let page;
 
   // Simple router
@@ -138,4 +138,12 @@ const App = () => {
   );
 };
 
+
+const App = () => {
+    return (
+        <AuthProvider>
+            <AppContent />
+        </AuthProvider>
+    )
+}
 export default App;

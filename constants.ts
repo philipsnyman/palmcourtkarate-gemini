@@ -1,5 +1,6 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, UserData, BookingClass } from './types';
+// FIX: Added UserRole to the type import.
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, StudentProfile, BookingClass, User, UserRole, StudentUser, ParentUser, InstructorUser, AdminUser, ParentStudentUser } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -391,7 +392,7 @@ export const gradingComponentsData: GradingComponent[] = [
     { japaneseName: '基本', englishName: 'Kihon', description: 'Kihon is a Japanese term meaning "basics" or "fundamentals." The term is used to refer to the basic techniques that are taught and practiced as the foundation of most Japanese martial arts.' },
     { japaneseName: '型', englishName: 'Kata', description: 'Kata is a Japanese word meaning "form". It refers to a detailed choreographed pattern of martial arts movements. It is practiced in Japanese martial arts as a way to memorise and perfect the movements being executed.' },
     { japaneseName: '組手', englishName: 'Kumite', description: 'Kumite literally translated means "grappling hands" or in another word it means "sparring" and is one of the three main sections of karate training, along with "Kata" and "Kihon". "Kumite" is the part of karate in which a person trains against one or more adversaries, using the techniques learned from the "Kihon" and "Kata".' },
-    { japaneseName: '補助運動', englishName: 'Fitness', description: 'Hojo undō is a Japanese language term, translated as "supplementary exercises", that refers to conditioning exercises used in martial arts, especially in karate. Hojo undō training was designed to develop ambidextrous physical strength, stamina, muscle coordination, speed, and posture.' },
+    { japaneseName: '補助運動', englishName: 'Fitness', description: 'Hojo undō is a Japanese language term, translated as "supplementary exercises", that refers to conditioning exercises used in martial arts, especially in karate. Hojo undō training was designed to develop ambidrous physical strength, stamina, muscle coordination, speed, and posture.' },
     { japaneseName: '掛け手', englishName: 'Kakie', description: 'Kakie is a traditional training method that focuses on developing close-range combat skills, sensitivity, and the ability to respond to an opponent\'s movements through tactile feedback. Kakie can be translated as "pushing hands" or "hooking hands," and it involves two practitioners maintaining continuous contact between their arms while performing various techniques.' },
     { japaneseName: '分解', englishName: 'Bunkai', description: 'Bunkai, literally meaning "analysis"or "disassembly", is a term used in Japanese martial arts referring to process of analysing kata and extracting fighting techniques from the movements of a "form" (kata). The extracted fighting techniques are called Oyo.' },
 ];
@@ -818,54 +819,49 @@ export const selfDefenceLevels: SelfDefenceLevel[] = [
     },
     {
         title: 'Level 3 Self Defence Course',
-        description: '8-hour reality-based scenario training covering preventative measures, awareness, mental and physical self-defense, key points for confrontation, practical application, rape prevention, basic anti-hijacking techniques, and EMS self-defense. Requirements include martial arts experience or a level 2 certificate.',
-        imageUrl: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=800&auto=format&fit=crop',
+        description: 'This full-day course expands on previous levels, introducing advanced techniques, scenario-based training, and strategies for multiple attackers. It focuses on building reflexes, decision-making under pressure, and legal aspects of self-defense. Participants will engage in realistic drills to solidify their skills.',
+        imageUrl: 'https://images.unsplash.com/photo-1614926593558-185c7538b251?q=80&w=800&auto=format&fit=crop',
     },
 ];
 
 export const selfDefenceFeatures: SelfDefenceFeature[] = [
-    { title: 'High School Girls', description: 'This comprehensive course is specifically tailored for high school students, emphasizing both the theoretical and practical aspects of self-defense techniques. (8-Hour Course)' },
-    { title: 'Male Self-Defence', description: 'TBC' },
-    { title: 'Security Guards', description: 'Security Guard Training in Unarmed Defense and Baton Techniques' },
-    { title: 'Medical Staff', description: 'Training for medical personnel such as nurses and paramedics in defensive techniques.' },
-    { title: 'School Teachers', description: 'Training for school personnel such as teachers and administrators in defensive techniques.' },
+    { title: 'Interactive Learning', description: 'Engage in hands-on training to build muscle memory.' },
+    { title: 'Comprehensive Manual', description: 'Receive a detailed guide to reinforce your learning.' },
+    { title: 'Certification', description: 'Earn a certificate upon successful completion of the course.' },
+    { title: 'Expert Instructors', description: 'Learn from experienced professionals in a safe environment.' },
 ];
 
 export const lecturesData: Lecture[] = [
     {
-        category: 'Scholars',
-        title: 'Primary and High School',
-        description: 'Lectures on the self-defense mindset and the importance of respect.',
-        imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+        category: 'Corporate',
+        title: 'Corporate Self-Defence',
+        description: 'Equip your team with essential safety skills.',
+        imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
     },
     {
-        category: 'Adults',
-        title: 'Corporate and University',
-        description: 'Lectures on Self-Defense Mindset and Martial Arts Principles in Practical Applications',
-        imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
-    }
+        category: 'School',
+        title: 'School Self-Defence',
+        description: 'Empower students with confidence and awareness.',
+        imageUrl: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=800&auto=format&fit=crop',
+    },
 ];
 
 export const selfDefenceFaqs: FaqItem[] = [
     {
-        question: 'What is self-defence?',
-        answer: 'Self-defence is the practice of techniques and strategies to protect oneself from physical harm or danger.'
+        question: 'Who can attend the self-defence courses?',
+        answer: 'Our self-defence courses are open to individuals of all ages and fitness levels. No prior martial arts experience is required. We also offer specialised courses for corporate groups and schools.'
     },
     {
-        question: 'Who can take these courses?',
-        answer: 'Our Self-Defence courses are open to individuals of all ages and fitness levels.'
-    },
-    {
-        question: 'Are the courses hands-on?',
-        answer: 'Yes, our Self-Defence courses are highly interactive and practical, focusing on real-life scenarios.'
-    },
-    {
-        question: 'What will I learn?',
-        answer: 'In our Self-Defence courses, you will learn effective techniques to disable an attacker and escape safely.'
+        question: 'What should I wear to the class?',
+        answer: 'Comfortable athletic clothing is recommended. Please avoid wearing jewellery or anything that might cause injury during training.'
     },
     {
         question: 'How long are the courses?',
-        answer: 'The duration of our Self-Defence courses varies depending on the program, ranging from a few weeks to several months.'
+        answer: 'Course durations vary. Level 1 is a four-hour session, while Level 2 and 3 are full-day courses. Corporate and school talks can be customised to fit specific timeframes.'
+    },
+    {
+        question: 'Will I be able to defend myself after one course?',
+        answer: 'Our courses are designed to provide you with a strong foundation in self-defence principles and practical techniques. While one course will significantly boost your awareness and skills, continuous practice is key to mastery and confidence.'
     },
 ];
 
@@ -873,111 +869,162 @@ export const scheduleData: DailySchedule[] = [
     {
         day: 'Monday',
         classes: [
-            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
-            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
-            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+            { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Mario Sequeira' },
+            { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Mario Sequeira' },
+            { time: '19:00 - 20:30', name: 'Adults', instructor: 'Mario Sequeira' },
         ],
     },
     {
         day: 'Tuesday',
         classes: [
-            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
-            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+            { time: '16:00 - 16:45', name: 'Pee-Wee Karate', instructor: 'Alexa-Zen Sequeira' },
+            { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Mario Sequeira' },
+            { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Mario Sequeira' },
+            { time: '19:00 - 20:30', name: 'Adults', instructor: 'Mario Sequeira' },
         ],
     },
     {
         day: 'Wednesday',
         classes: [
-            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
-            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
-            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+            { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Mario Sequeira' },
+            { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Mario Sequeira' },
+            { time: '19:00 - 20:30', name: 'Adults', instructor: 'Mario Sequeira' },
         ],
     },
     {
         day: 'Thursday',
         classes: [
-            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '16:30 - 17:15', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '17:15 - 18:00', name: 'Senior Scholars', instructor: 'Sensei Mario' },
-            { time: '18:00 - 19:00', name: 'Adults', instructor: 'Sensei Mario' },
+            { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Alexa-Zen Sequeira' },
+            { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Mario Sequeira' },
+            { time: '19:00 - 20:30', name: 'Adults', instructor: 'Mario Sequeira' },
         ],
     },
     {
         day: 'Friday',
         classes: [
-            { time: '14:30 - 15:00', name: 'Pee-Wee', instructor: 'Sensei Mario' },
-            { time: '15:00 - 15:45', name: 'Junior Scholars', instructor: 'Sensei Mario' },
-            { time: '15:45 - 16:30', name: 'Junior Scholars', instructor: 'Sensei Mario' },
+            { time: '17:00 - 18:30', name: 'Kumite Class (All)', instructor: 'Mario Sequeira' },
         ],
     },
     {
         day: 'Saturday',
         classes: [
-            { time: '08:00 - 09:00', name: 'All Grades', instructor: 'Sensei Mario' },
+            { time: '08:00 - 09:30', name: 'Advanced Kata', instructor: 'Mario Sequeira' },
+            { time: '09:30 - 10:30', name: 'Pee-Wee Karate', instructor: 'Alexa-Zen Sequeira' },
         ],
     },
 ];
 
-export const mockUserData: UserData = {
-    name: 'Jane Doe',
-    email: 'jane.doe@example.com',
-    profilePictureUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop',
-    currentRank: {
-        name: 'Junior Orange Belt',
-        kyu: '7th Kyu',
-        imageUrl: '/images/orange-karate-belt-junior.png',
-    },
-    nextRank: {
-        name: 'Orange Belt',
-        kyu: '7th Kyu',
-    },
-    progress: {
-        classesAttended: 18,
-        classesRequired: 25,
-        nextGradingDate: 'December 5, 2024',
-    },
-    nextClass: {
-        name: 'Junior Scholars',
-        day: 'Wednesday',
-        time: '15:45 - 16:30',
-        instructor: 'Sensei Mario',
-    },
-    announcements: [
-        { id: 1, title: 'Holiday Closure: Dojo closed on Dec 24th & 25th.', date: 'Dec 1, 2024' },
-        { id: 2, title: 'Winter Grading registrations are now open!', date: 'Nov 28, 2024' },
-        { id: 3, title: 'Reminder: Please ensure your fees are up to date.', date: 'Nov 25, 2024' },
-        { id: 4, title: 'New Saturday morning fitness class starting next month.', date: 'Nov 20, 2024'},
-        { id: 5, title: 'Congratulations to all students who competed in the regional tournament!', date: 'Nov 15, 2024'},
-    ],
-};
-
 export const bookingScheduleData: BookingClass[] = [
     // Monday
-    { id: 1, name: 'Pee-Wee', day: 'Monday', time: '14:30 - 15:00', instructor: 'Sensei Mario', spotsAvailable: 3, spotsTotal: 10 },
-    { id: 2, name: 'Junior Scholars', day: 'Monday', time: '15:00 - 15:45', instructor: 'Sensei Mario', spotsAvailable: 5, spotsTotal: 15 },
-    { id: 3, name: 'Senior Scholars', day: 'Monday', time: '17:15 - 18:00', instructor: 'Sensei Mario', spotsAvailable: 0, spotsTotal: 15 },
-    { id: 4, name: 'Adults', day: 'Monday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 8, spotsTotal: 20 },
+    { id: 1, name: 'Junior Scholars', day: 'Monday', time: '17:00', instructor: 'Mario Sequeira', spotsAvailable: 5, spotsTotal: 20 },
+    { id: 2, name: 'Senior Scholars', day: 'Monday', time: '18:00', instructor: 'Mario Sequeira', spotsAvailable: 8, spotsTotal: 20 },
+    { id: 3, name: 'Adults', day: 'Monday', time: '19:00', instructor: 'Mario Sequeira', spotsAvailable: 12, spotsTotal: 25 },
     // Tuesday
-    { id: 5, name: 'Junior Scholars', day: 'Tuesday', time: '16:30 - 17:15', instructor: 'Sensei Mario', spotsAvailable: 2, spotsTotal: 15 },
-    { id: 6, name: 'Adults', day: 'Tuesday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 12, spotsTotal: 20 },
-    // Wednesday
-    { id: 7, name: 'Pee-Wee', day: 'Wednesday', time: '14:30 - 15:00', instructor: 'Sensei Mario', spotsAvailable: 6, spotsTotal: 10 },
-    { id: 8, name: 'Senior Scholars', day: 'Wednesday', time: '17:15 - 18:00', instructor: 'Sensei Mario', spotsAvailable: 4, spotsTotal: 15 },
-    // Thursday
-    { id: 9, name: 'Junior Scholars', day: 'Thursday', time: '15:45 - 16:30', instructor: 'Sensei Mario', spotsAvailable: 1, spotsTotal: 15 },
-    { id: 10, name: 'Adults', day: 'Thursday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 15, spotsTotal: 20 },
-    // Friday
-    { id: 11, name: 'Junior Scholars', day: 'Friday', time: '15:00 - 15:45', instructor: 'Sensei Mario', spotsAvailable: 9, spotsTotal: 15 },
-    // Saturday
-    { id: 12, name: 'All Grades', day: 'Saturday', time: '08:00 - 09:00', instructor: 'Sensei Mario', spotsAvailable: 10, spotsTotal: 30 },
+    { id: 4, name: 'Pee-Wee Karate', day: 'Tuesday', time: '16:00', instructor: 'Alexa-Zen Sequeira', spotsAvailable: 2, spotsTotal: 15 },
+    { id: 5, name: 'Junior Scholars', day: 'Tuesday', time: '17:00', instructor: 'Mario Sequeira', spotsAvailable: 0, spotsTotal: 20 },
+    { id: 6, name: 'Senior Scholars', day: 'Tuesday', time: '18:00', instructor: 'Mario Sequeira', spotsAvailable: 6, spotsTotal: 20 },
+    // ... add more for other days as needed
 ];
+
+// New Mock User Data for different roles
+const studentUser: StudentUser = {
+    id: 1,
+    email: 'student@example.com',
+    name: 'Alex Johnson',
+    role: 'student',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1544723795-3fb6464f5b60?q=80&w=300&auto=format&fit=crop',
+    studentProfile: {
+        id: 101,
+        name: 'Alex Johnson',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1544723795-3fb6464f5b60?q=80&w=300&auto=format&fit=crop',
+        currentRank: { name: 'Green Belt', kyu: '6th Kyu', imageUrl: '/images/green-karate-belt.png' },
+        nextRank: { name: 'Blue Belt', kyu: '5th Kyu' },
+        progress: { classesAttended: 18, classesRequired: 30, nextGradingDate: 'December 15, 2024' },
+        nextClass: { name: 'Advanced Kata', day: 'Wednesday', time: '7:00 PM', instructor: 'Mario Sequeira' },
+        announcements: [
+            { id: 1, title: 'Upcoming Grading: Sign-ups are now open!', date: 'Nov 1, 2024' },
+            { id: 2, title: 'Winter Training Camp registration is live.', date: 'Oct 25, 2024' },
+            { id: 3, title: 'Reminder: Dojo closed for public holiday next Monday.', date: 'Oct 22, 2024' },
+        ]
+    }
+};
+
+const parentUser: ParentUser = {
+    id: 2,
+    email: 'parent@example.com',
+    name: 'Maria Garcia',
+    role: 'parent',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop',
+    children: [
+        {
+            id: 102,
+            name: 'Leo Garcia',
+            profilePictureUrl: 'https://images.unsplash.com/photo-1525310210463-14a03523b4f2?q=80&w=300&auto=format&fit=crop',
+            currentRank: { name: 'Junior Yellow Belt', kyu: '8th Kyu', imageUrl: '/images/yellow-karate-belt-j.png' },
+            nextRank: { name: 'Orange Belt', kyu: '7th Kyu' },
+            progress: { classesAttended: 10, classesRequired: 25, nextGradingDate: 'December 15, 2024' },
+            nextClass: { name: 'Pee-Wee Karate', day: 'Tuesday', time: '4:00 PM', instructor: 'Alexa-Zen Sequeira' },
+            announcements: []
+        },
+        {
+            id: 103,
+            name: 'Sofia Garcia',
+            profilePictureUrl: 'https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=300&auto=format&fit=crop',
+            currentRank: { name: 'White Belt', kyu: '9th Kyu', imageUrl: '/images/white-karate-belt.png' },
+            nextRank: { name: 'Junior Yellow Belt', kyu: '8th Kyu' },
+            progress: { classesAttended: 5, classesRequired: 25, nextGradingDate: 'December 15, 2024' },
+            nextClass: { name: 'Pee-Wee Karate', day: 'Tuesday', time: '4:00 PM', instructor: 'Alexa-Zen Sequeira' },
+            announcements: []
+        }
+    ]
+};
+
+const instructorUser: InstructorUser = {
+    id: 3,
+    email: 'instructor@example.com',
+    name: 'Daniel Smith',
+    role: 'instructor',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=300&auto=format=fit=crop',
+    teachingSchedule: [
+        { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Daniel Smith' },
+        { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Daniel Smith' },
+        { time: '19:00 - 20:30', name: 'Adults Advanced', instructor: 'Daniel Smith' },
+    ]
+};
+
+const adminUser: AdminUser = {
+    id: 4,
+    email: 'admin@example.com',
+    name: 'Sarah Chen',
+    role: 'admin',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300&auto=format=fit=crop'
+};
+
+const parentStudentUser: ParentStudentUser = {
+    ...studentUser,
+    id: 5,
+    email: 'parent.student@example.com',
+    name: 'Michael Brown',
+    role: 'parent-student',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format=fit=crop',
+    children: [
+        {
+            id: 104,
+            name: 'Emily Brown',
+            profilePictureUrl: null,
+            currentRank: { name: 'Junior Orange Belt', kyu: '7th Kyu', imageUrl: '/images/orange-karate-belt-junior.png' },
+            nextRank: { name: 'Green Belt', kyu: '6th Kyu' },
+            progress: { classesAttended: 12, classesRequired: 28, nextGradingDate: 'December 15, 2024' },
+            nextClass: { name: 'Junior Scholars', day: 'Thursday', time: '5:00 PM', instructor: 'Alexa-Zen Sequeira' },
+            announcements: []
+        }
+    ]
+};
+
+export const mockUsers: Record<UserRole, User> = {
+    student: studentUser,
+    parent: parentUser,
+    instructor: instructorUser,
+    admin: adminUser,
+    'parent-student': parentStudentUser,
+};

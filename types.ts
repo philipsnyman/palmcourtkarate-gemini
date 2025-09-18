@@ -159,9 +159,22 @@ export interface DailySchedule {
   classes: ScheduleClass[];
 }
 
-export interface UserData {
+export interface BookingClass {
+    id: number;
     name: string;
-    email: string;
+    day: 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+    time: string;
+    instructor: string;
+    spotsAvailable: number;
+    spotsTotal: number;
+}
+
+// --- New Role-Based Authentication Types ---
+
+// Represents the detailed profile of a student, separate from the user account.
+export interface StudentProfile {
+    id: number;
+    name: string;
     profilePictureUrl: string | null;
     currentRank: {
         name: string;
@@ -190,12 +203,44 @@ export interface UserData {
     }[];
 }
 
-export interface BookingClass {
+
+export type UserRole = 'student' | 'parent' | 'instructor' | 'admin' | 'parent-student';
+
+// Base user type for all authenticated users
+interface BaseUser {
     id: number;
+    email: string;
     name: string;
-    day: 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
-    time: string;
-    instructor: string;
-    spotsAvailable: number;
-    spotsTotal: number;
+    role: UserRole;
+    profilePictureUrl?: string | null;
 }
+
+// Specific user types based on roles
+export interface StudentUser extends BaseUser {
+    role: 'student';
+    studentProfile: StudentProfile;
+}
+
+export interface ParentUser extends BaseUser {
+    role: 'parent';
+    children: StudentProfile[];
+}
+
+export interface InstructorUser extends BaseUser {
+    role: 'instructor';
+    teachingSchedule: ScheduleClass[];
+}
+
+export interface AdminUser extends BaseUser {
+    role: 'admin';
+}
+
+// A special role for parents who are also students
+export interface ParentStudentUser extends BaseUser {
+    role: 'parent-student';
+    studentProfile: StudentProfile;
+    children: StudentProfile[];
+}
+
+// A union type representing any possible authenticated user
+export type User = StudentUser | ParentUser | InstructorUser | AdminUser | ParentStudentUser;
