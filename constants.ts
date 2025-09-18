@@ -1,6 +1,6 @@
 import React from 'react';
 // FIX: Added UserRole to the type import.
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, StudentProfile, BookingClass, User, UserRole, StudentUser, ParentUser, InstructorUser, AdminUser, ParentStudentUser } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, StudentProfile, BookingClass, User, UserRole, StudentUser, ParentUser, InstructorUser, AdminUser, ParentStudentUser, Testimonial } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -45,6 +45,36 @@ export const featuredBlogPosts: FeaturedBlogPost[] = [
         href: '#',
         description: 'A new format for a new era.',
         imageUrl: 'https://images.unsplash.com/photo-1549576490-b44133552ba4?q=80&w=400&auto=format&fit=crop',
+    }
+];
+
+export const testimonialsData: Testimonial[] = [
+    {
+        quote: "Karate at Palm Court has been life-changing for me. The instructors are knowledgeable and supportive, and the training environment is top-notch.",
+        author: {
+            name: 'John Doe',
+            title: 'Parent, ABC Company',
+            imageUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=200&auto=format&fit=crop',
+        },
+        companyLogoUrl: 'https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg'
+    },
+    {
+        quote: "My child's confidence and discipline have improved significantly since joining Palm Court Karate Centre. The instructors are excellent role models.",
+        author: {
+            name: 'Jane Smith',
+            title: 'Student, XYZ School',
+            imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop'
+        },
+        companyLogoUrl: 'https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg'
+    },
+    {
+        quote: "A fantastic community and world-class instruction. I've grown so much, both physically and mentally. Highly recommended!",
+        author: {
+            name: 'Samuel Lee',
+            title: 'Adult Student',
+            imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop'
+        },
+        companyLogoUrl: 'https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg'
     }
 ];
 
@@ -984,7 +1014,7 @@ const instructorUser: InstructorUser = {
     email: 'instructor@example.com',
     name: 'Daniel Smith',
     role: 'instructor',
-    profilePictureUrl: 'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=300&auto=format=fit=crop',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=300&auto=format=fit-crop',
     teachingSchedule: [
         { time: '17:00 - 18:00', name: 'Junior Scholars', instructor: 'Daniel Smith' },
         { time: '18:00 - 19:00', name: 'Senior Scholars', instructor: 'Daniel Smith' },
@@ -997,7 +1027,7 @@ const adminUser: AdminUser = {
     email: 'admin@example.com',
     name: 'Sarah Chen',
     role: 'admin',
-    profilePictureUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300&auto=format=fit=crop'
+    profilePictureUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=300&auto=format&fit=crop'
 };
 
 const parentStudentUser: ParentStudentUser = {
@@ -1006,7 +1036,7 @@ const parentStudentUser: ParentStudentUser = {
     email: 'parent.student@example.com',
     name: 'Michael Brown',
     role: 'parent-student',
-    profilePictureUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format=fit=crop',
+    profilePictureUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop',
     children: [
         {
             id: 104,

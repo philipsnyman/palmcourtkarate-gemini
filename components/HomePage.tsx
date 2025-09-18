@@ -3,6 +3,7 @@ import InfoSection from './InfoSection';
 import TeamSection from './TeamSection';
 import TournamentsSection from './TournamentsSection';
 import CtaSection from './CtaSection';
+import TestimonialsSection from './TestimonialsSection';
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <InfoSection />
       <TeamSection />
       <TournamentsSection />
+      <TestimonialsSection />
       <CtaSection />
     </>
   );

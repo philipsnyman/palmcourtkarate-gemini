@@ -31,6 +31,16 @@ export interface FeaturedBlogPost {
     imageUrl: string;
 }
 
+export interface Testimonial {
+    quote: string;
+    author: {
+        name: string;
+        title: string;
+        imageUrl: string;
+    };
+    companyLogoUrl?: string;
+}
+
 export interface Affiliation {
     name: string;
     description: string;

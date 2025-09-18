@@ -1,25 +1,6 @@
 import type { ReactNode } from 'react';
-
-const testimonials = [
-    {
-        quote: "Karate at Palm Court has been life-changing for me. The instructors are knowledgeable and supportive, and the training environment is top-notch.",
-        author: {
-            name: 'John Doe',
-            title: 'Parent, ABC Company',
-            imageUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=200&auto=format&fit=crop',
-        },
-        companyLogoUrl: 'https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg'
-    },
-    {
-        quote: "My child's confidence and discipline have improved significantly since joining Palm Court Karate Centre. The instructors are excellent role models.",
-        author: {
-            name: 'Jane Smith',
-            title: 'Student, XYZ School',
-            imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop'
-        },
-        companyLogoUrl: 'https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg'
-    }
-];
+import { testimonialsData } from '../constants';
+import type { Testimonial } from '../types';
 
 const CheckmarkIcon = () => (
     <svg className="w-6 h-6 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +14,7 @@ const StarIcon = () => (
     </svg>
 );
 
-const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100 flex flex-col h-full">
         <div className="flex mb-4">
             {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
@@ -47,9 +28,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
                 <div className="font-semibold text-gray-900">{testimonial.author.name}</div>
                 <div className="text-gray-600 text-sm">{testimonial.author.title}</div>
             </div>
-            <div className="ml-auto pl-4 border-l border-gray-200">
-                <img className="h-8" src={testimonial.companyLogoUrl} alt="Company logo" />
-            </div>
+            {testimonial.companyLogoUrl && (
+                <div className="ml-auto pl-4 border-l border-gray-200">
+                    <img className="h-8" src={testimonial.companyLogoUrl} alt="Company logo" />
+                </div>
+            )}
         </div>
     </div>
 );
@@ -166,7 +149,7 @@ const OurDojoPage = () => {
                              <p className="text-lg text-gray-600">Amazing karate classes, highly recommended for all ages!</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                            {testimonials.map((testimonial, index) => (
+                            {testimonialsData.slice(0, 2).map((testimonial, index) => (
                                 <TestimonialCard key={index} testimonial={testimonial} />
                             ))}
                         </div>
