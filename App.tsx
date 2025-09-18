@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import AffiliationsPage from './components/AffiliationsPage';
 import BlackBeltsPage from './components/BlackBeltsPage';
 import BlogPage from './components/BlogPage';
+import BlogPostPage from './components/BlogPostPage';
 import ContactUsPage from './components/ContactUsPage';
 import FacilitiesPage from './components/FacilitiesPage';
 import MarioSequeiraPage from './components/MarioSequeiraPage';
@@ -23,6 +24,7 @@ import TermsOfServicePage from './components/TermsOfServicePage';
 import CookieSettingsPage from './components/CookieSettingsPage';
 import AuthPage from './components/AuthPage';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
+import ChatWidget from './components/ChatWidget';
 
 
 const App = () => {
@@ -105,7 +107,11 @@ const App = () => {
       page = <CookieSettingsPage />;
       break;
     default:
-      page = <HomePage />;
+      if (window.location.pathname.startsWith('/blog/')) {
+        page = <BlogPostPage />;
+      } else {
+        page = <HomePage />;
+      }
   }
 
   return (
@@ -115,6 +121,7 @@ const App = () => {
         {page}
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 };

@@ -51,18 +51,18 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Mario Sequeira',
     role: 'Owner & Head Instructor',
-    imageUrl: '/images/mario-sequeira.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop',
     learnMoreUrl: '/mario-sequeira',
   },
   {
     name: 'Zenobia Sequeira',
     role: 'Owner & Administrator',
-    imageUrl: '/images/zenobia-sequeira.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop',
   },
   {
     name: 'Alexa-Zen Sequeira',
     role: 'Assistant Instructor',
-    imageUrl: '/images/alexa-zen-sequeira.jpeg',
+    imageUrl: 'https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=300&auto=format&fit=crop',
   },
 ];
 
