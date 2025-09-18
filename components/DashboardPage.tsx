@@ -107,7 +107,7 @@ const DashboardPage = () => {
                     <div className="space-y-8">
                         <DashboardCard title="Quick Links">
                             <div className="grid grid-cols-2 gap-4">
-                                <a href="#" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">
+                                <a href="/booking" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">
                                     <p className="font-semibold">Book a Class</p>
                                 </a>
                                  <a href="#" className="p-4 bg-gray-100 text-center rounded-md hover:bg-gray-200 transition-colors">

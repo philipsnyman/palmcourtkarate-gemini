@@ -189,3 +189,13 @@ export interface UserData {
         date: string;
     }[];
 }
+
+export interface BookingClass {
+    id: number;
+    name: string;
+    day: 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+    time: string;
+    instructor: string;
+    spotsAvailable: number;
+    spotsTotal: number;
+}

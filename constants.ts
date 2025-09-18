@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, UserData } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, UserData, BookingClass } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -958,3 +958,24 @@ export const mockUserData: UserData = {
         { id: 3, title: 'Reminder: Please ensure your fees are up to date.', date: 'Nov 25, 2024' },
     ],
 };
+
+export const bookingScheduleData: BookingClass[] = [
+    // Monday
+    { id: 1, name: 'Pee-Wee', day: 'Monday', time: '14:30 - 15:00', instructor: 'Sensei Mario', spotsAvailable: 3, spotsTotal: 10 },
+    { id: 2, name: 'Junior Scholars', day: 'Monday', time: '15:00 - 15:45', instructor: 'Sensei Mario', spotsAvailable: 5, spotsTotal: 15 },
+    { id: 3, name: 'Senior Scholars', day: 'Monday', time: '17:15 - 18:00', instructor: 'Sensei Mario', spotsAvailable: 0, spotsTotal: 15 },
+    { id: 4, name: 'Adults', day: 'Monday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 8, spotsTotal: 20 },
+    // Tuesday
+    { id: 5, name: 'Junior Scholars', day: 'Tuesday', time: '16:30 - 17:15', instructor: 'Sensei Mario', spotsAvailable: 2, spotsTotal: 15 },
+    { id: 6, name: 'Adults', day: 'Tuesday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 12, spotsTotal: 20 },
+    // Wednesday
+    { id: 7, name: 'Pee-Wee', day: 'Wednesday', time: '14:30 - 15:00', instructor: 'Sensei Mario', spotsAvailable: 6, spotsTotal: 10 },
+    { id: 8, name: 'Senior Scholars', day: 'Wednesday', time: '17:15 - 18:00', instructor: 'Sensei Mario', spotsAvailable: 4, spotsTotal: 15 },
+    // Thursday
+    { id: 9, name: 'Junior Scholars', day: 'Thursday', time: '15:45 - 16:30', instructor: 'Sensei Mario', spotsAvailable: 1, spotsTotal: 15 },
+    { id: 10, name: 'Adults', day: 'Thursday', time: '18:00 - 19:00', instructor: 'Sensei Mario', spotsAvailable: 15, spotsTotal: 20 },
+    // Friday
+    { id: 11, name: 'Junior Scholars', day: 'Friday', time: '15:00 - 15:45', instructor: 'Sensei Mario', spotsAvailable: 9, spotsTotal: 15 },
+    // Saturday
+    { id: 12, name: 'All Grades', day: 'Saturday', time: '08:00 - 09:00', instructor: 'Sensei Mario', spotsAvailable: 10, spotsTotal: 30 },
+];
