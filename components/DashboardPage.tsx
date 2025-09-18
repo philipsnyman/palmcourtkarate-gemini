@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useState, useEffect, useCallback, ReactNode } from 'react';
 import { mockUserData } from '../constants';
 import type { UserData } from '../types';
 
@@ -53,10 +53,59 @@ const ProgressTracker = ({ user }: { user: UserData }) => {
     );
 };
 
+const AnnouncementsCarousel = ({ announcements }: { announcements: UserData['announcements'] }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextAnnouncement = useCallback(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % announcements.length);
+    }, [announcements.length]);
+
+    const prevAnnouncement = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + announcements.length) % announcements.length);
+    };
+    
+    useEffect(() => {
+        const timer = setTimeout(nextAnnouncement, 7000); // Change every 7 seconds
+        return () => clearTimeout(timer);
+    }, [currentIndex, nextAnnouncement]);
+
+    if (!announcements || announcements.length === 0) {
+        return <p className="text-sm text-gray-500 text-center">No announcements at this time.</p>;
+    }
+
+    const currentAnnouncement = announcements[currentIndex];
+
+    return (
+        <div className="relative flex flex-col items-center justify-center min-h-[100px]">
+            <div key={currentIndex} className="text-center animate-fade-in px-8">
+                <p className="font-semibold text-gray-800 text-sm mb-1">{currentAnnouncement.title}</p>
+                <p className="text-xs text-gray-500">{currentAnnouncement.date}</p>
+            </div>
+
+            <button onClick={prevAnnouncement} className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-800 transition-colors rounded-full focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-amber-700" aria-label="Previous announcement">
+                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button onClick={nextAnnouncement} className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-800 transition-colors rounded-full focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-amber-700" aria-label="Next announcement">
+                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
+                {announcements.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-colors ${currentIndex === index ? 'bg-amber-800' : 'bg-gray-300 hover:bg-gray-400'}`}
+                        aria-label={`Go to announcement ${index + 1}`}
+                    ></button>
+                ))}
+            </div>
+        </div>
+    );
+};
+
 
 const DashboardPage = () => {
     const user = mockUserData;
-    const progressPercentage = (user.progress.classesAttended / user.progress.classesRequired) * 100;
 
     return (
         <div className="bg-gray-50 min-h-screen">
@@ -123,14 +172,20 @@ const DashboardPage = () => {
                         </DashboardCard>
                         
                         <DashboardCard title="Dojo Announcements">
-                            <ul className="space-y-4">
-                                {user.announcements.map(ann => (
-                                    <li key={ann.id} className="border-b border-gray-100 pb-3 last:border-b-0 last:pb-0">
-                                        <p className="font-semibold text-gray-800 text-sm">{ann.title}</p>
-                                        <p className="text-xs text-gray-500">{ann.date}</p>
-                                    </li>
-                                ))}
-                            </ul>
+                            {user.announcements.length > 3 ? (
+                                <AnnouncementsCarousel announcements={user.announcements} />
+                            ) : user.announcements.length > 0 ? (
+                                <ul className="space-y-4">
+                                    {user.announcements.map(ann => (
+                                        <li key={ann.id} className="border-b border-gray-100 pb-3 last:border-b-0 last:pb-0">
+                                            <p className="font-semibold text-gray-800 text-sm">{ann.title}</p>
+                                            <p className="text-xs text-gray-500">{ann.date}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p className="text-sm text-gray-500">No announcements at this time.</p>
+                            )}
                         </DashboardCard>
                     </div>
                 </div>

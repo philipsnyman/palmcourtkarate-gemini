@@ -956,6 +956,8 @@ export const mockUserData: UserData = {
         { id: 1, title: 'Holiday Closure: Dojo closed on Dec 24th & 25th.', date: 'Dec 1, 2024' },
         { id: 2, title: 'Winter Grading registrations are now open!', date: 'Nov 28, 2024' },
         { id: 3, title: 'Reminder: Please ensure your fees are up to date.', date: 'Nov 25, 2024' },
+        { id: 4, title: 'New Saturday morning fitness class starting next month.', date: 'Nov 20, 2024'},
+        { id: 5, title: 'Congratulations to all students who competed in the regional tournament!', date: 'Nov 15, 2024'},
     ],
 };
 
