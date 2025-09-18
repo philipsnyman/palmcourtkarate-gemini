@@ -25,6 +25,7 @@ import CookieSettingsPage from './components/CookieSettingsPage';
 import AuthPage from './components/AuthPage';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
 import ChatWidget from './components/ChatWidget';
+import DashboardPage from './components/DashboardPage';
 
 
 const App = () => {
@@ -41,6 +42,9 @@ const App = () => {
       break;
     case '/forgot-password':
       page = <ForgotPasswordPage />;
+      break;
+    case '/dashboard':
+      page = <DashboardPage />;
       break;
     // About Us
     case '/our-dojo':

@@ -158,3 +158,33 @@ export interface DailySchedule {
   day: string;
   classes: ScheduleClass[];
 }
+
+export interface UserData {
+    name: string;
+    email: string;
+    currentRank: {
+        name: string;
+        kyu: string;
+        imageUrl: string;
+    };
+    nextRank: {
+        name: string;
+        kyu: string;
+    };
+    progress: {
+        classesAttended: number;
+        classesRequired: number;
+        nextGradingDate: string;
+    };
+    nextClass: {
+        name: string;
+        day: string;
+        time: string;
+        instructor: string;
+    };
+    announcements: {
+        id: number;
+        title: string;
+        date: string;
+    }[];
+}

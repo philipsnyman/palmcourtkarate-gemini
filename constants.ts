@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule } from './types';
+import type { MegaMenuColumn, TeamMember, InfoCard, Affiliation, DanRank, FeaturedBlogPost, BlogPost, FaqItem, GradingComponent, BeltRank, HistorySection, TerminologySection, PricingTab, SelfDefenceLevel, SelfDefenceFeature, Lecture, DailySchedule, UserData } from './types';
 
 export const megaMenuColumns: MegaMenuColumn[] = [
   {
@@ -927,3 +927,33 @@ export const scheduleData: DailySchedule[] = [
         ],
     },
 ];
+
+export const mockUserData: UserData = {
+    name: 'Jane Doe',
+    email: 'jane.doe@example.com',
+    currentRank: {
+        name: 'Junior Orange Belt',
+        kyu: '7th Kyu',
+        imageUrl: '/images/orange-karate-belt-junior.png',
+    },
+    nextRank: {
+        name: 'Orange Belt',
+        kyu: '7th Kyu',
+    },
+    progress: {
+        classesAttended: 18,
+        classesRequired: 25,
+        nextGradingDate: 'December 5, 2024',
+    },
+    nextClass: {
+        name: 'Junior Scholars',
+        day: 'Wednesday',
+        time: '15:45 - 16:30',
+        instructor: 'Sensei Mario',
+    },
+    announcements: [
+        { id: 1, title: 'Holiday Closure: Dojo closed on Dec 24th & 25th.', date: 'Dec 1, 2024' },
+        { id: 2, title: 'Winter Grading registrations are now open!', date: 'Nov 28, 2024' },
+        { id: 3, title: 'Reminder: Please ensure your fees are up to date.', date: 'Nov 25, 2024' },
+    ],
+};
