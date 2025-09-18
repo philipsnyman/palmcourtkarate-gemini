@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useState, type ReactNode, type FormEvent, type ChangeEvent } from 'react';
 
 type ContactInfoItemProps = {
     icon: ReactNode;
@@ -18,20 +18,122 @@ const ContactInfoItem = ({ icon, title, children }: ContactInfoItemProps) => (
     </div>
 );
 
+const FormField = ({ id, name, label, type = 'text', value, onChange, error }: { id: string, name: string, label: string, type?: string, value: string, onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void, error?: string }) => (
+    <div>
+        <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+        {type === 'textarea' ? (
+            <textarea
+                id={id}
+                name={name}
+                value={value}
+                onChange={onChange}
+                rows={4}
+                className={`appearance-none block w-full px-3 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-amber-700 focus:border-amber-700 sm:text-sm`}
+                aria-invalid={!!error}
+                aria-describedby={error ? `${id}-error` : undefined}
+            />
+        ) : (
+            <input
+                type={type}
+                id={id}
+                name={name}
+                value={value}
+                onChange={onChange}
+                className={`appearance-none block w-full px-3 py-2 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-amber-700 focus:border-amber-700 sm:text-sm`}
+                aria-invalid={!!error}
+                aria-describedby={error ? `${id}-error` : undefined}
+            />
+        )}
+        {error && <p id={`${id}-error`} className="text-red-600 text-sm mt-1">{error}</p>}
+    </div>
+);
 
 const ContactUsPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+    const [errors, setErrors] = useState<Partial<typeof formData>>({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const validate = () => {
+        const newErrors: Partial<typeof formData> = {};
+        if (!formData.name.trim()) newErrors.name = 'Full name is required.';
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email address is required.';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email address is invalid.';
+        }
+        if (!formData.subject.trim()) newErrors.subject = 'Subject is required.';
+        if (!formData.message.trim()) newErrors.message = 'Message is required.';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+        if (errors[name as keyof typeof errors]) {
+            setErrors(prev => ({ ...prev, [name]: undefined }));
+        }
+    };
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        if (validate()) {
+            console.log('Form submitted:', formData);
+            // Here you would typically send the data to a server
+            setIsSubmitted(true);
+        }
+    };
+
     return (
         <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-20 items-center">
-                    <div className="lg:col-span-3">
-                        <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Connect</p>
-                        <h1 className="text-5xl lg:text-6xl font-extrabold mb-4">Get in Touch</h1>
-                        <p className="text-lg text-gray-600 max-w-2xl">
-                            We'd love to hear from you. Contact us for any inquiries or assistance.
-                        </p>
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Connect</p>
+                    <h1 className="text-5xl lg:text-6xl font-extrabold mb-4">Get in Touch</h1>
+                    <p className="text-lg text-gray-600">
+                        We'd love to hear from you. Fill out the form below or use our contact details to reach out for any inquiries or assistance.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-start">
+                    <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                        {isSubmitted ? (
+                            <div className="text-center flex flex-col items-center justify-center h-full min-h-[400px]">
+                                <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                                    <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900">Thank You!</h3>
+                                <p className="text-gray-600 mt-2">Your message has been sent successfully. We will get back to you shortly.</p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <h2 className="text-3xl font-bold mb-6">Send us a message</h2>
+                                <FormField id="name" name="name" label="Full Name" value={formData.name} onChange={handleChange} error={errors.name} />
+                                <FormField id="email" name="email" label="Email Address" type="email" value={formData.email} onChange={handleChange} error={errors.email} />
+                                <FormField id="subject" name="subject" label="Subject" value={formData.subject} onChange={handleChange} error={errors.subject} />
+                                <FormField id="message" name="message" label="Message" type="textarea" value={formData.message} onChange={handleChange} error={errors.message} />
+                                <div>
+                                    <button
+                                        type="submit"
+                                        className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 transition-colors"
+                                    >
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        )}
                     </div>
-                    <div className="lg:col-span-2">
+
+                    <div>
+                         <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
                         <div className="space-y-8">
                              <ContactInfoItem
                                 icon={<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4C2.897 4 2 4.897 2 6V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V6C22 4.897 21.103 4 20 4ZM20 6V6.511L12 12.734L4 6.512V6H20ZM4 18V9.044L11.386 14.789C11.5611 14.9265 11.7773 15.0013 12 15.0013C12.2227 15.0013 12.4389 14.9265 12.614 14.789L20 9.044L20.002 18H4Z" fill="currentColor"></path></svg>}
